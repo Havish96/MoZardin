@@ -51,20 +51,44 @@ article {
 }
 
 .cta-container {
+  width: 900px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   img {
     max-width: 443px;
   }
 }
 
-img {
-  mix-blend-mode: multiply;
+.text-container {
+  p:first-child {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.2px;
+    color: #25282B;
+  }
+  p:last-child{
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.2px;
+    color: #25282B;
+  }
+  .btn{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    background-color: #3A4F39;
+    color: white;
+  }
 }

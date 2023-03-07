@@ -13,7 +13,7 @@
 </div>
 
 <!-- Article -->
-<article class="mt-5">
+<article class="my-5">
 
   <!-- Why Mo Zardin? -->
   <p class="section-title text-centred">Why Mo Zardin?</p>
@@ -45,15 +45,17 @@
 
   </div>
 
-  <%= link_to "START NOW", root_path, class: "btn text-center my-5" %>
-
 </article>
 
   <!-- Call to action -->
   <div class="cta">
     <div class="cta-container">
       <%= image_tag("cta") %>
-      <p>Try our library about plants</p>
+      <div class="text-container">
+        <p>Try our library about plants</p>
+        <p class="font-montaga">Find all the informations you need about plants.</p>
+        <%= link_to "Browse Wikiplant", root_path, class: "btn" %>
+      </div>
     </div>
   </div>
 

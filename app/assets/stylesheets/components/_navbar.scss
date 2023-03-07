@@ -10,3 +10,24 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-text {
+  text-decoration: none;
+  color: #3A4F39;
+  padding: 8px 18px;
+  border: solid 1px #3A4F39;
+  border-radius: 4px;
+  font-size: larger;
+}
+
+.navbar-text-logo {
+  text-decoration: none;
+  color: #3A4F39;
+  padding: 8px 18px;
+  font-size: xx-large;
+}
+
+.fill {
+  background-color: #3A4F39;
+  color: white;
+}

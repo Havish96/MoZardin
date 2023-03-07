@@ -22,7 +22,13 @@ article {
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 14rem);
-  justify-content: center;
-  grid-row-gap: 40px;
+  grid-template-columns: repeat(auto-fill, 340px);
+  justify-content: space-evenly;
+}
+
+.features-content {
+  img {
+    max-width: 340px;
+    mix-blend-mode: multiply;
+  }
 }

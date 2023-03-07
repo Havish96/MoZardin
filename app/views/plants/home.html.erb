@@ -5,7 +5,7 @@
   <div class="content-container">
     <h1>Start your gardening journey with a fresh start</h1>
     <h4>Your digital guide to a perfect garden.</h4>
-    <div class="cta">
+    <div class="inline-buttons">
       <%= link_to "Virtual Garden", root_path, class: "btn" %>
       <%= link_to "Wikiplants", root_path, class: "btn" %>
     </div>
@@ -49,8 +49,12 @@
 
 </article>
 
-<!-- Call to action -->
-<div class="cta">
-</div>
+  <!-- Call to action -->
+  <div class="cta">
+    <div class="cta-container">
+      <%= image_tag("cta") %>
+      <p>Try our library about plants</p>
+    </div>
+  </div>
 
 <%= render 'shared/footer' %>

@@ -19,6 +19,7 @@ article {
     letter-spacing: 1px;
     background-color: #3A4F39;
     color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
   }
 }
 
@@ -56,12 +57,8 @@ article {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   img {
-    max-width: 443px;
+    display: none;
   }
 }
 
@@ -90,5 +87,17 @@ article {
     letter-spacing: 1px;
     background-color: #3A4F39;
     color: white;
+  }
+}
+
+@media (min-width: 940px) {
+  .cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    img {
+      max-width: 443px;
+      display: block;
+    }
   }
 }

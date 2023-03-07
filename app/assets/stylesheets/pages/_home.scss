@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+.font-montaga {
+  font-family: 'Montaga', serif;
+}
+
+.text-centred {
+  text-align: center;
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 0.2px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  justify-content: space-evenly;
+}
+
+.features-content {
+  img {
+    max-width: 340px;
+    mix-blend-mode: multiply;
+  }
+}

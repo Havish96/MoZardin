@@ -10,7 +10,7 @@
 <% end %>
 
 <div class="container">
-  <p class="mb-5">Categories</p>
+  <p class="mb-5 text-centred">Categories</p>
 
   <div class="category-cards">
     <div class="card">
@@ -27,23 +27,30 @@
     </div>
   </div>
 
-  <p class="mt-4">All plants in library</p>
+  <p class="mt-4 text-centred">All plants in library</p>
 
   <div class="plant-cards">
     <% @plants.each do |plant| %>
       <div class="card">
+        <%= link_to plant_path(plant) do %>
 
-        <% if plant.photo.attached? %>
-          <div class="img" style="background-image:url('<%= cl_image_path plant.photo.key %>')";></div>
-        <% else %>
-          <div class="img-none"><p>No Image</p></div>
+          <% if plant.photo.attached? %>
+            <div class="img" style="background-image:url('<%= cl_image_path plant.photo.key %>')";></div>
+          <% else %>
+            <div class="img-none"><p>No Image</p></div>
+          <% end %>
+
+          <div class="text">
+            <p><%= plant.name %></p>
+            <p><%= plant.description %></p>
+          </div>
+
         <% end %>
-
-        <div class="text">
-          <p><%= plant.name %></p>
-          <p><%= plant.description %></p>
-        </div>
       </div>
     <% end %>
   </div>
+
+  <p class="text-centred my-5 btn-normal"><%= link_to "Load more", plants_path(@plant), class: "btn" %></p>
 </div>
+
+<%= render "shared/footer" %>

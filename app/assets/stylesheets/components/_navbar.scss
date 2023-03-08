@@ -15,16 +15,16 @@
 
 .navbar-text {
   text-decoration: none;
-  color: #3A4F39;
+  color: $primary-green;
   padding: 8px 30px;
-  border: solid 1px #3A4F39;
+  border: solid 1px $primary-green;
   border-radius: 4px;
   font-size: 16px;
 }
 
 .navbar-text-logo {
   text-decoration: none;
-  color: #3A4F39;
+  color: $primary-green;
   padding: 8px 18px;
   font-family: Oleo Script;
   font-size: 32px;
@@ -34,7 +34,7 @@
 }
 
 .fill {
-  background-color: #3A4F39;
+  background-color: $primary-green;
   color: white;
 }
 

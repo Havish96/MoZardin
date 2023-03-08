@@ -1,4 +1,11 @@
+.plant-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .plant-cards .card {
+  margin: 20px;
   height: 375px;
   width: 280px;
   border-radius: 4px;
@@ -8,7 +15,7 @@
   .img {
     height: 240px;
     width: 100%;
-    background-color: red;
+    background-size: cover;
     margin-bottom: 24px;
   }
 

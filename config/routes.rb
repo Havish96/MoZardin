@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "plants#home"
 
   resources :plants
+  resources :gardens
 end

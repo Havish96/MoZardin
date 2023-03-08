@@ -3,4 +3,8 @@ class PlantsController < ApplicationController
 
   def home
   end
+
+  def index
+    @plants = Plant.all
+  end
 end

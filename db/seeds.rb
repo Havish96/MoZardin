@@ -1,5 +1,5 @@
 require "open-uri"
-category = Category.find(2)
+category = Category.create(name: "fruit", description: "fruits")
 puts "destroying all plants"
 Plant.destroy_all
 puts "destroyed all plants"

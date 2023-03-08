@@ -7,6 +7,7 @@
       <h2><%= @plant.name %></h2>
       <br>
       <h4>Botanical name: <%= @plant.scientific_name %></h4>
+      <h4>Category: <%= @plant.category.name %></h4>
       <br><br>
       <p style='font-size: 18px'><%= @plant.description %></p>
       <br><br><br><br>
@@ -35,6 +36,12 @@
   </div>
   <h2 class='text-center mt-5'>Similar Plants</h2>
 </div>
+
+<% @plants.first(3).each do |plant| %>
+<%= plant.name %>
+<%= plant.category.name %>
+<%= cl_image_tag plant.photo.key, width: 100, height: 100 %>
+<% end %>
 
 <%= render 'shared/footer' %>
 

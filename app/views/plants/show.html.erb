@@ -1,3 +1,42 @@
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <div class='container d-flex align-item mt-5' style='gap: 40px'>
+    <%= cl_image_tag @plant.photo.key, width: 600, height: 800, crop: 'fit' %>
+    <div class='p-3'>
+      <h2><%= @plant.name %></h2>
+      <br>
+      <h4>Botanical name: <%= @plant.scientific_name %></h4>
+      <br><br>
+      <p style='font-size: 18px'><%= @plant.description %></p>
+      <br><br><br><br>
+      <%= link_to 'Add to garden', '#', class: 'btn btn-success' %>
+      <%= link_to 'Go to forum', '#', class: 'btn btn-success' %>
+    </div>
+  </div>
+  <div class='container'>
+    <table>
+      <tr>
+        <i class="fa-light fa-cloud-sun"></i>
+        <th><i class="fa-light fa-water"></i></th>
+        <th><i class="fa-light fa-wind"></i></th>
+        <th><i class="fa-light fa-temperature-high"></i></th>
+      </tr>
+      <tr>
+        <td>Sun Exposure</td>
+        <td>Water</td>
+        <td>Wind</td>
+        <td>Temperature</td>
+      </tr>
+      <tr>
+        <td> * * * * * * * </td>
+        <td> * * * * * * * </td>
+        <td> * * * * * * * </td>
+        <td> * * * * * * * </td>
+      </tr>
+    </table>
+  </div>
+  
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal

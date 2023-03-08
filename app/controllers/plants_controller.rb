@@ -4,6 +4,10 @@ class PlantsController < ApplicationController
   def home
   end
 
+  def index
+    @plants = Plant.all
+  end
+
   def show
     @plant = Plant.find(params[:id])
   end

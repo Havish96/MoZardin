@@ -1,8 +1,16 @@
 <%= render "shared/navbar" %>
 <h1 class="text-centred my-5 font-oleo">Wikiplant</h1>
 
+<%= form_with url: "", method: :get, class: "d-flex search-bar mb-5" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for plants"
+  %>
+<% end %>
+
 <div class="container">
-  <p class="mb-4">Categories</p>
+  <p class="mb-5">Categories</p>
 
   <div class="category-cards">
     <div class="card">
@@ -18,5 +26,16 @@
       <p>Trees</p>
     </div>
   </div>
+
+  <p class="mt-4">All plants in library</p>
+
+  <div class="plant-cards">
+    <div class="card">
+      <div class="img"></div>
+      <div class="text">
+        <p>Red Oak Trees</p>
+        <p>It is a native of North America, in the eastern and central United States and southeast and south-central Canada.</p>
+      </div>
+    </div>
+  </div>
 </div>
-<br><br><br><br><br>

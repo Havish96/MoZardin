@@ -1,56 +1,79 @@
 <%= render 'shared/navbar' %>
 
-<div class="container">
-  <div class='container d-flex align-item mt-5' style='gap: 40px'>
-    <%= cl_image_tag @plant.photo.key, width: 450, height: 600, crop: 'fit' %>
-    <div class='p-3'>
-      <h2><%= @plant.name %></h2>
-      <br>
-      <h4>Botanical name: <%= @plant.scientific_name %></h4>
-      <h4>Category: <%= @plant.category.name %></h4>
-      <br><br>
-      <p style='font-size: 18px'><%= @plant.description %></p>
-      <br><br><br><br>
-      <%= link_to 'Add to garden', '#', class: 'btn btn-success' %>
-      <%= link_to 'Go to forum', '#', class: 'btn btn-success' %>
+<div class="container mb-5">
+
+  <!-- Plant header -->
+  <div class="plant-header my-5">
+    <%= cl_image_tag @plant.photo.key, class: "plant-img"%>
+    <div class="content-text">
+      <p class="mb-4"><%= @plant.name %></p>
+      <p>Botanical name: <%= @plant.scientific_name %></p>
+      <p>Category: <%= @plant.category.name %></p>
+      <p><%= @plant.description %></p>
+      <p><%= link_to "Add to garden", "#", class: "btn btn-normal" %> <span><%= link_to "Wikiplants", "#", class: "btn btn-normal" %></span>  </p>
     </div>
   </div>
-  <div class='container icon-border'>
-    <div class="row justify-content-evenly">
-      <div class="col-4 text-center">
-        <i class="fa-regular fa-cloud-sun icon"></i>
-        <p class='mt-3'>Sunlight Exposure</p>
-        <p> * * * *</p>
-      </div>
-      <div class="col-4 text-center">
-        <i class="fa-regular fa-water icon"></i>
-        <p class='mt-3'>Water</p>
-        <p> * * * *</p>
-      </div>
-      <div class="col-4 text-center">
-        <i class="fa-regular fa-temperature-quarter icon"></i>
-        <p class='mt-3'>Temperature</p>
-        <p> * * * *</p>
-      </div>
+
+  <!-- Conditions -->
+  <div class="condition my-5">
+    <div class="condition-card">
+      <i class="fa-solid fa-cloud-sun icon mb-4"></i>
+      <p class="mb-2">Sunlight Exposure</p>
+      <p>*****</p>
+    </div>
+    <div class="condition-card mb-4">
+      <i class="fa-solid fa-water icon mb-4"></i>
+      <p class="mb-2">Water</p>
+      <p>*****</p>
+    </div>
+    <div class="condition-card mb-4">
+      <i class="fa-solid fa-temperature-quarter icon mb-4"></i>
+      <p class="mb-2">Temperature</p>
+      <p>*****</p>
     </div>
   </div>
-  <h2 class='text-center mt-5'>Similar Plants</h2>
+
+  <!-- similar plants? -->
+  <p class="section-title text-centred mt-5">Similar plants</p>
+
+   <div class="plant-cards">
+    <% @plants.first(3).each do |plant| %>
+      <div class="card">
+        <%= link_to plant_path(plant) do %>
+
+          <% if plant.photo.attached? %>
+            <div class="img" style="background-image:url('<%= cl_image_path plant.photo.key %>')";></div>
+          <% else %>
+            <div class="img-none"><p>No Image</p></div>
+          <% end %>
+
+          <div class="text">
+            <p><%= plant.name %></p>
+            <p><%= plant.description %></p>
+          </div>
+
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
 
-<% @plants.first(3).each do |plant| %>
-<%= plant.name %>
-<%= plant.category.name %>
-<%= cl_image_tag plant.photo.key, width: 100, height: 100 %>
-<% end %>
+<%# <h2 class='text-center mt-5'>Similar Plants</h2> %>
+<%# @plants.first(3).each do |plant| %>
+<%#= plant.name %>
+<%#= plant.category.name %>
+<%#= cl_image_tag plant.photo.key, width: 100, height: 100 %>
+<%# end %>
 
 <%= render 'shared/footer' %>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+<%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></button> %>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered"">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

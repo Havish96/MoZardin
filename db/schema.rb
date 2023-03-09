@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_123302) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_071540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,22 +61,43 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_123302) do
 
   create_table "gardens", force: :cascade do |t|
     t.string "name"
-    t.bigint "plant_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plant_id"], name: "index_gardens_on_plant_id"
     t.index ["user_id"], name: "index_gardens_on_user_id"
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "date"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "scientific_name"
+    t.string "origin"
+    t.text "instruction"
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_plants_on_category_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer "age"
+    t.string "location"
+    t.bigint "garden_id", null: false
+    t.bigint "plant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_tags_on_garden_id"
+    t.index ["plant_id"], name: "index_tags_on_plant_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -106,8 +127,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_123302) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "conditions", "plants"
-  add_foreign_key "gardens", "plants"
   add_foreign_key "gardens", "users"
   add_foreign_key "plants", "categories"
+  add_foreign_key "tags", "gardens"
+  add_foreign_key "tags", "plants"
   add_foreign_key "tasks", "plants"
 end

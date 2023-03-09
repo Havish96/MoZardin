@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :plants
   resources :gardens
+  resources :guides, only: %i[index show]
 end

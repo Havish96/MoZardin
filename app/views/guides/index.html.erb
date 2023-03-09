@@ -1,0 +1,30 @@
+<%= render "shared/navbar" %>
+
+<h1 class="title">Guides</h1>
+
+<div class="container mb-5">
+  <div class="guides-cards">
+
+    <!-- Individual cards -->
+    <% @guides.each do |guide| %>
+      <div class="card">
+        <div class="img"></div>
+        <div class="content">
+          <p><span><i class="fa-regular fa-clock"></i></span>
+            &nbsp;&nbsp;<%= guide.date %>
+          </p>
+          <p><%= guide.title %></p>
+          <p><%= guide.description %></p>
+          <p>
+            <span>
+              <%= image_tag "https://source.unsplash.com/collection/1332302", class: "guide-avatar" %>
+            </span>
+              &nbsp;&nbsp;&nbsp;<%= guide.author %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

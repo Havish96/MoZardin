@@ -9,7 +9,7 @@ Category.create(name: "fruit", description: "fruits")
 puts "created category"
 
 puts "creating fruits"
-10.times do
+1.times do
   plant = Plant.new(name: Faker::Food.fruits,
                 description: Faker::Lorem.paragraph_by_chars(number: 114, supplemental: false),
                 scientific_name: Faker::Food.fruits,
@@ -22,3 +22,12 @@ puts "creating fruits"
       plant.save
 end
 puts "created fruits"
+
+Guide.destroy_all
+
+Guide.create(title: "HOW TO START SEEDS INDOORS",
+              description: Faker::Lorem.paragraph(sentence_count: 30),
+              date: "September 18, 2019",
+              author: "Bertram Perry",
+              image_url: "https://nualgiponds.com/wp-content/uploads/2014/04/water-garden-residential-pond-1080x745.jpg"
+)

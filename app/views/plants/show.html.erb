@@ -76,13 +76,14 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
-      <%= simple_form_for @plant do |f| %>
-        <%= f.input :name, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
-        <% end %>
-      </div>
+      <%= simple_form_for @tag do |f| %>
+        <%= f.input :age, label: 'The age of your plant', error: 'Age is mandatory, please specify' %>
+        <%= f.input :location, label: 'The location of your plant', error: 'Location is mandatory, please specify' %>
       <div class="d-flex justify-content-between">
        <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="width:50%">Cancel</button>
-        <button type="button" class="btn btn-normal" style="width:50%">Confirm</button>
+       <%= f.submit "Confirm", type:"button", class:"btn btn-normal", style:"width:50%" %>
+      </div>
+        <% end %>
       </div>
       </div>
       </div>

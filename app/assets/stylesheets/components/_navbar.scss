@@ -1,0 +1,47 @@
+// ----------------------------- Navbar ------------------------------
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-text {
+  text-decoration: none;
+  color: $primary-green;
+  padding: 8px 30px;
+  border: solid 1px $primary-green;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.navbar-text-logo {
+  text-decoration: none;
+  color: $primary-green;
+  padding: 8px 18px;
+  font-family: Oleo Script;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0px;
+}
+
+.fill {
+  background-color: $primary-green;
+  color: white;
+}
+
+// ----------------------------- Avatar ------------------------------
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

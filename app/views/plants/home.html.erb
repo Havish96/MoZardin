@@ -1,0 +1,63 @@
+<%= render 'shared/navbar' %>
+
+<!-- Banner -->
+<div id="hero-banner">
+  <div class="content-container">
+    <h1>Start your gardening journey with a fresh start</h1>
+    <h4>Your digital guide to a perfect garden.</h4>
+    <div class="inline-buttons">
+      <%= link_to "Virtual Garden", gardens_path, class: "btn" %>
+      <%= link_to "Wikiplants", plants_path, class: "btn" %>
+
+    </div>
+  </div>
+</div>
+
+<!-- Article -->
+<article class="my-5">
+
+  <!-- Why Mo Zardin? -->
+  <p class="section-title text-centred">Why Mo Zardin?</p>
+  <p class="text-centred font-montaga mt-5 px-3">Taking care of your garden in a more efficient and effective manner has never been more easy. is a user-friendly and helpful platform that can help people take care of their gardens more effectively. It combines personalized garden care plans, task reminders, plant database, community forum, weather updates, and integration with smart devices to provide a comprehensive gardening experience.</p>
+
+  <!-- How it works -->
+  <p class="section-title text-centred my-5">HOW IT WORKS</p>
+  <div class="features">
+
+    <div class="features-content">
+      <%= cl_image_tag("feature-1.jpg") %>
+      <p class="text-centred font-montaga">Personalize your virtual garden with plants found in your garden in real life to live a better experience.</p>
+    </div>
+
+    <div class="features-content">
+      <%= cl_image_tag("feature-1.jpg") %>
+      <p class="text-centred font-montaga">Browse information about a variety of plants from a large plant database to quench your thirst of knowledge.</p>
+    </div>
+
+    <div class="features-content">
+      <%= cl_image_tag("feature-3.jpg") %>
+      <p class="text-centred font-montaga">You will receive daily weather updates and will be notified regularly to take care of your plants.</p>
+    </div>
+
+    <div class="features-content">
+      <%= cl_image_tag("feature-4.jpg") %>
+      <p class="text-centred font-montaga">If you got any further questions, a group of professionals are ready to answer you.</p>
+    </div>
+  </div>
+  <p class="text-centred mt-5"><%= link_to "START NOW", new_user_registration_path, class: "btn" %></p>
+
+</article>
+
+  <!-- Call to action -->
+  <div class="cta mt-5">
+    <div class="cta-container">
+      <%= cl_image_tag("cta.png") %>
+      <div class="text-container">
+        <p>Try our library about plants</p>
+        <p class="font-montaga">Find all the informations you need about plants.</p>
+        <%= link_to "Browse Wikiplant", plants_path, class: "btn" %>
+      </div>
+    </div>
+  </div>
+
+<%= render 'shared/footer' %>

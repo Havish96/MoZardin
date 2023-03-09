@@ -1,0 +1,40 @@
+.container-form {
+  display: flex;
+
+  a {
+    text-decoration: none;
+  }
+
+  .form-side {
+    width: 50%;
+    padding: 50px 100px;
+  }
+
+  .img-side {
+    top: 0;
+    background-image: url(https://res.cloudinary.com/dw9lrue0u/image/upload/v1678193771/development/login-image_tski7m.jpg);
+    background-size: cover;
+    width: 50vw;
+    height: 100vh;
+    background-position-x: 50%;
+    position: sticky;
+  }
+
+  .btn-log {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1064px) {
+  .container-form {
+    display: block;
+
+    .form-side {
+      width: 100%;
+      padding: 50px 100px;
+    }
+  }
+  .img-side {
+    display: none;
+  }
+}

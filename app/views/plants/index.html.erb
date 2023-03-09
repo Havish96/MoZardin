@@ -1,0 +1,56 @@
+<%= render "shared/navbar" %>
+<h1 class="title">Wikiplant</h1>
+
+<%= form_with url: "", method: :get, class: "d-flex search-bar mb-5" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for plants"
+  %>
+<% end %>
+
+<div class="container">
+  <p class="mb-5 text-centred">Categories</p>
+
+  <div class="category-cards">
+    <div class="card">
+      <p>Vegetables</p>
+    </div>
+    <div class="card">
+      <p>Herbs</p>
+    </div>
+    <div class="card">
+      <p>Flowers</p>
+    </div>
+    <div class="card">
+      <p>Trees</p>
+    </div>
+  </div>
+
+  <p class="mt-4 text-centred">All plants in library</p>
+
+  <div class="plant-cards">
+    <% @plants.each do |plant| %>
+      <div class="card">
+        <%= link_to plant_path(plant) do %>
+
+          <% if plant.photo.attached? %>
+            <div class="img" style="background-image:url('<%= cl_image_path plant.photo.key %>')";></div>
+          <% else %>
+            <div class="img-none"><p>No Image</p></div>
+          <% end %>
+
+          <div class="text">
+            <p><%= plant.name %></p>
+            <p><%= plant.description %></p>
+          </div>
+
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <p class="text-centred my-5"><%= link_to "Load more", plants_path(@plant), class: "btn btn-normal" %></p>
+</div>
+
+<%= render "shared/footer" %>

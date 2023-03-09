@@ -1,5 +1,9 @@
 require "open-uri"
 
+puts 'Destroying all Categories'
+Category.destroy_all
+puts 'Destroying all Gardens'
+Garden.destroy_all
 puts "Destroying all Plants"
 Plant.destroy_all
 

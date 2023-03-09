@@ -19,7 +19,7 @@
               &nbsp;&nbsp;<%= guide.date %>
             </p>
             <p><%= guide.title %></p>
-            <p><%= guide.description %></p>
+            <p><%= raw guide.description.first(140) %> ...</p>
             <p>
               <span>
                 <%= image_tag "https://source.unsplash.com/collection/1332302", class: "guide-avatar" %>

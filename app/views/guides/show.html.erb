@@ -1,0 +1,17 @@
+<%= render "shared/navbar" %>
+
+<h1 class="title"><%= @guide.title %></h1>
+
+<div class="container guide mb-5">
+  <% if @guide.image_url.nil? %>
+    <div class="img" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png);"></div>
+  <% else %>
+    <div class="img" style="background-image: url(<%= @guide.image_url %>);"></div>
+  <% end %>
+
+  <div class="content mt-5">
+    <%= raw @guide.description %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

@@ -12,6 +12,7 @@ category = Category.create(name: "Fruits & Vegetables",
 
 puts "Creating 10 Fruit & Vegetables plants ..."
 
+puts "creating fruits"
 10.times do
   plant = Plant.new(name: Faker::Food.fruits,
                     description: Faker::Lorem.paragraph_by_chars(number: 114, supplemental: false),
@@ -24,5 +25,16 @@ puts "Creating 10 Fruit & Vegetables plants ..."
   plant.category = category
   plant.save
 end
+puts "created fruits"
+
+Guide.destroy_all
+puts "creating guide"
+sample_document = File.read(Rails.root.join('db', 'seeds', 'How_to_plant_grass_seed.html'))
+Guide.create(title: "How to plant grass seed",
+             description: sample_document,
+             date: "September 18, 2019",
+             author: "Bertram Perry",
+             image_url: "https://nualgiponds.com/wp-content/uploads/2014/04/water-garden-residential-pond-1080x745.jpg"
+)
 
 puts "Done!"

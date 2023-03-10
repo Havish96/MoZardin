@@ -1,11 +1,12 @@
 require "open-uri"
 
+Condition.destroy_all
+puts "Destroying all Plants"
+Plant.destroy_all
 puts 'Destroying all Categories'
 Category.destroy_all
 puts 'Destroying all Gardens'
 Garden.destroy_all
-puts "Destroying all Plants"
-Plant.destroy_all
 
 puts "Creating 4 categories"
 fruits = Category.create(name: "Fruits & Vegetables",

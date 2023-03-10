@@ -1,23 +1,28 @@
 class GardensController < ApplicationController
-
   def index
     @gardens = Garden.all
-  end
-  def new
     @garden = Garden.new
   end
-   def create
- @garden = Garden.new(garden_params)
+
+  def create
+    @user = current_user
+    @garden = Garden.new(garden_params)
+    @garden.user = @user
 
     if @garden.save
-      redirect_to plant_path(@plant)
+      redirect_to garden_path(@garden)
     else
-      render "restaurants/show", status: :unprocessable_entity
+      render "gardens/index", status: :unprocessable_entity
     end
   end
 
   def show
     @garden = Garden.find(params[:id])
-    # @garden_plants =
-end
+  end
+
+  private
+
+  def garden_params
+    params.require(:garden).permit(:name)
+  end
 end

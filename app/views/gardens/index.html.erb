@@ -1,29 +1,19 @@
 <%= render "shared/navbar" %>
-<p class="title mt-4">Plants in your Garden</h1>
 
+<% if @gardens.nil? == true %>
+    <h1 class="title mt-5">Create a new garden</h1>
+  <% else %>
+    <h1 class="title mt-5">Your gardens</h1>
+<% end %>
 
-<div class="article-container">
-  <br>
+<div class="container mt-5">
 
-  <div class="cards-container">
-    <% @gardens.each do |garden| %>
-    <% end %>
-        <div class="booking-product-card">
-        <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Potatoes
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    carrots
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Tomatoes
-  </div>
-</div>
-
-  </div>
-<br><br><br>
+<% @gardens.each do |garden| %>
+  <%= link_to garden_path(garden) do  %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/1331287)">
+    <%= garden.name %>
+    </div>
+  <% end %>
+<% end %>
 
 </div>

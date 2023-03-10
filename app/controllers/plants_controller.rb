@@ -11,5 +11,6 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
     @plants = Plant.where(category_id: @plant.category_id)
+    @tag = Tag.new
   end
 end

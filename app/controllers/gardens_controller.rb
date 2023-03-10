@@ -8,7 +8,6 @@ class GardensController < ApplicationController
   end
    def create
  @garden = Garden.new(garden_params)
-
     if @garden.save
       redirect_to plant_path(@plant)
     else

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :plants
   resources :gardens, only: %i[create show index new]
   resources :guides, only: %i[index show]
+  resources :tags, only: %i[create]
 end

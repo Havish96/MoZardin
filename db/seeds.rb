@@ -314,4 +314,15 @@ cond16 = Condition.new(sun: '8 to 12 hours', water: 'Must be planted in water', 
 cond16.plant = plant16
 cond16.save
 
+# Guides
+Guide.destroy_all
+puts "Creating guide"
+sample_document = File.read(Rails.root.join('db', 'seeds', 'How_to_plant_grass_seed.html'))
+Guide.create(title: "How to plant grass seed",
+             description: sample_document,
+             date: "September 18, 2019",
+             author: "Bertram Perry",
+             image_url: "https://nualgiponds.com/wp-content/uploads/2014/04/water-garden-residential-pond-1080x745.jpg"
+)
+
 puts "Done!"

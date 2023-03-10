@@ -25,19 +25,13 @@ trees = Category.create(name: 'Trees',
                         or trunk and branches that support leaves. Beneath the ground, a tree has a root system that
                         acts as an anchor and stores the water and nutrients the plant needs to grow.')
 
-shrubs = Category.create(name: 'Shrubs & Perennials',
-                         description: 'A shrub (often also called a bush) is a small-to-medium-sized perennial woody
-                         plant. Unlike herbaceous plants, shrubs have persistent woody stems above the ground. Shrubs
-                         can be either deciduous or evergreen. They are distinguished from trees by their multiple stems
-                         and shorter height, less than 6-10 m (20-33 ft) tall.')
-
 aquatic = Category.create(name: 'Water & Aquatic',
                           description: 'Aquatic plants are plants that have adapted to living in aquatic environments
                           (saltwater or freshwater). They are also referred to as hydrophytes or macrophytes to
                           distinguish them from algae and other microphytes. A macrophyte is a plant that grows in or
                           near water and is either emergent, submergent, or floating.')
 
-puts "Creating 20 plants ..."
+puts "Creating 16 plants ..."
 
 # Category - Fruits & Vegetables
 plant1 = Plant.new(name: 'Tomato',
@@ -236,6 +230,75 @@ cond12 = Condition.new(sun: '3 to 6 hours', water: 'Requires regular watering', 
 cond12.plant = plant12
 cond12.save
 
-# Category - Shrubs
+# Category - Aquatic
+plant13 = Plant.new(name: 'Sweet Calamus, Flagroot',
+                    description: 'A grass-like perennial plant with white-and-green variegated leaves up to about 0.5m
+                    long. An ideal focus plant, it tolerates short periods of drought. Acorus is dormant in winter. It
+                    makes a good bog garden plant for pond margins.',
+                    scientific_name: 'Acorus calamus "Variegatus"', origin: 'Asia, India and Europe',
+                    instruction: 'It makes a good bog garden plant for pond margins, and its a good focus plant. Use
+                    Acorus calamus "Variegatus" as an eye caching focus point in bog gardens or moist conditions. Sweet
+                    flag tolerates short periods of drought.')
+plant13.category = aquatic
+plant13_photo = URI.open('https://plantinfo.co.za/wp-content/uploads/2020/07/1373999282_sf-main.jpg')
+plant13.photo.attach(io: plant13_photo, filename: "#{plant13.name}.png", content_type: "image/png")
+plant13.save
+cond13 = Condition.new(sun: '6 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 27˚C')
+cond13.plant = plant13
+cond13.save
+
+plant14 = Plant.new(name: 'Creeping lily turf',
+                    description: 'Excellent for mass display and colour- contrast planting. Liriope has thick tuberous
+                    root systems and spread on underground rhizomes to form dense mats of foliage. The green leaves are
+                    8-18 inches long, but they tend to flop over. Erect spikes of tiny white, mauve, violet, or purple
+                    flowers stand a few inches above the arching foliage.',
+                    scientific_name: 'Liriope spicata, "Silver Ribbon"', origin: 'Japan and China',
+                    instruction: 'Liriope does best in a fertile, moist, well drained soil with a pH slightly acidic to
+                    neutral. It tolerates sandy as well as clayey soils, but never soil conditions that stay soggy.
+                    Liriope grows best in partial shade but can tolerate full sun or full shade. Once established, it is
+                    drought tolerant.')
+plant14.category = aquatic
+plant14_photo = URI.open('https://images.unsplash.com/photo-1658750103098-456ec308d183?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80')
+plant14.photo.attach(io: plant14_photo, filename: "#{plant14.name}.png", content_type: "image/png")
+plant14.save
+cond14 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '20˚C to 25˚C')
+cond14.plant = plant14
+cond14.save
+
+plant15 = Plant.new(name: 'Water lily',
+                    description: 'Water lilies are jewels of the aquatic world. They and closely related lotus flowers
+                    are rooted in soil, emerging above the water surface, appearing as if floating. The flowers are
+                    round and centered around a radial notch. The plants are symbolic in ancient and modern times,
+                    celebrated for their beauty, and immortalized in art and religion.',
+                    scientific_name: 'Nymphaea', origin: 'Africa',
+                    instruction: 'Plant water lilies in large plastic containers or baskets specifically designed for
+                    aquatic plants. If necessary, you can line baskets with burlap or landscape fabric so that the soil
+                    does not fall through the cracks. Several sheets of newspaper can be placed on the bottom of
+                    containers for the same purpose.')
+plant15.category = aquatic
+plant15_photo = URI.open('https://images.unsplash.com/photo-1541354254661-adb801adb23e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80')
+plant15.photo.attach(io: plant15_photo, filename: "#{plant15.name}.png", content_type: "image/png")
+plant15.save
+cond15 = Condition.new(sun: '8 to 10 hours', water: 'Must be planted in water', climate: '20˚C to 35˚C')
+cond15.plant = plant15
+cond15.save
+
+plant16 = Plant.new(name: 'Sacred Lotus',
+                    description: 'The Sacred Lotus in reference to the sacred and symbolic status the flower holds in
+                    Buddhism and Hinduism. It is native to Asia and Australia. It is a large-flowered lotus that
+                    typically grows 3-6" tall in shallow water and spreads by thickened rhizomes rooted in the mud. Each
+                    flower blooms for about three days, opening in the morning and closing at night each day.',
+                    scientific_name: 'Nelumbo nucifera', origin: 'Asia',
+                    instruction: 'Easily grown in organically rich loams in calm water margins in full sun. For water
+                    gardens or small ponds, plant roots in large containers or planting baskets with up to 24” of water
+                    covering the crowns. Container grown plants are easier to control and, if desired, to move to other
+                    locations.')
+plant16.category = aquatic
+plant16_photo = URI.open('https://images.unsplash.com/photo-1533305023562-381612b1f229?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+plant16.photo.attach(io: plant16_photo, filename: "#{plant16.name}.png", content_type: "image/png")
+plant16.save
+cond16 = Condition.new(sun: '8 to 12 hours', water: 'Must be planted in water', climate: '20˚C to 35˚C')
+cond16.plant = plant16
+cond16.save
 
 puts "Done!"

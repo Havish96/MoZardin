@@ -68,9 +68,6 @@
 
 <%= render 'shared/footer' %>
 
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -80,6 +77,7 @@
         <%= f.input :age, placeholder: "Weeks" ,label: 'The age of your plant', error: 'Age is mandatory, please specify' %>
         <%= f.association :garden, collection: Garden.where(user: current_user), data:{placeholder: "Garden name"} %>
         <%= f.input :location, placeholder: "outdoor, interior, etc..." ,label: 'The location of your plant', error: 'Location is mandatory, please specify' %>
+        <%= f.input :plant_id, as: "hidden", input_html: { value: @plant.id } %>
       <div class="d-flex justify-content-between">
        <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="width:50%">Cancel</button>
        <%= f.submit "Confirm", class:"btn btn-normal", style:"width:50%" %>

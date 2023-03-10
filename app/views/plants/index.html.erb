@@ -14,16 +14,16 @@
 
   <div class="category-cards">
     <div class="card">
-      <p>Vegetables</p>
+      <p><%= link_to 'Fruits & Vegetables', controller: 'plants', action: 'index', query: 'Fruits & Vegetables' %></p>
     </div>
     <div class="card">
-      <p>Herbs</p>
+      <p><%= link_to 'Herbs', controller: 'plants', action: 'index', query: 'Herbs' %></p>
     </div>
     <div class="card">
-      <p>Flowers</p>
+      <p><%= link_to 'Water & Aquatic', controller: 'plants', action: 'index', query: 'Water & Aquatic' %></p>
     </div>
     <div class="card">
-      <p>Trees</p>
+      <p><%= link_to 'Trees', controller: 'plants', action: 'index', query: 'Trees' %></p>
     </div>
   </div>
 
@@ -41,8 +41,9 @@
           <% end %>
 
           <div class="text">
-            <p><%= plant.name %></p>
-            <p><%= plant.description %></p>
+            <p class='text-center'><strong><%= plant.name %></strong></p>
+            <p class='mb-1'><%= plant.scientific_name %></p>
+            <p>Origin: <%= plant.origin %></p>
           </div>
 
         <% end %>

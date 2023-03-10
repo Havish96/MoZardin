@@ -5,7 +5,14 @@ class PlantsController < ApplicationController
   end
 
   def index
+    category = ['Fruits & Vegetables', 'Herbs', 'Trees', 'Water & Aquatic']
+    if params[:query].present? && !category.include?(params[:query])
+      @plants = Plant.search_by_name(params[:query])
+    elsif category.include?(params[:query])
+      @plants = Plant.where(category: Category.find_by(name: params[:query]))
+    else
     @plants = Plant.all
+    end
   end
 
   def show

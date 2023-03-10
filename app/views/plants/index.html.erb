@@ -13,23 +13,35 @@
   <p class="mb-5 text-centred">Categories</p>
 
   <div class="category-cards">
+
+  <%= link_to 'plants?query=Fruits+%26+Vegetables', controller: 'plants', action: 'index', query: 'Fruits & Vegetables' do %>
     <div class="card">
-      <p><%= link_to 'Fruits & Vegetables', controller: 'plants', action: 'index', query: 'Fruits & Vegetables' %></p>
+      <p>Fruits & Vegetables</p>
     </div>
-    <div class="card">
-      <p><%= link_to 'Herbs', controller: 'plants', action: 'index', query: 'Herbs' %></p>
+  <% end %>
+
+  <%= link_to 'plants?query=Herbs', controller: 'plants', action: 'index', query: 'Herbs' do %>
+    <div class="card" style="background-image:url(https://images.unsplash.com/photo-1532092367580-3bd5bc78dd9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)">
+      <p>Herbs</p>
     </div>
-    <div class="card">
-      <p><%= link_to 'Water & Aquatic', controller: 'plants', action: 'index', query: 'Water & Aquatic' %></p>
+  <% end %>
+
+  <%= link_to 'plants?query=Water+%26+Aquatic', controller: 'plants', action: 'index', query: 'Water & Aquatic' do %>
+    <div class="card" style="background-image: url(https://images.unsplash.com/photo-1490772888775-55fceea286b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <p>Water & Aquatic</p>
     </div>
-    <div class="card">
-      <p><%= link_to 'Trees', controller: 'plants', action: 'index', query: 'Trees' %></p>
+  <% end %>
+
+  <%= link_to 'plants?query=Trees', controller: 'plants', action: 'index', query: 'Trees' do %>
+    <div class="card" style="background-image: url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);">
+      <p>Trees</p>
     </div>
+  <% end %>
   </div>
 
   <p class="mt-4 text-centred">All plants in library</p>
 
-  <div class="plant-cards">
+  <div class="plant-cards mb-5">
     <% @plants.each do |plant| %>
       <div class="card">
         <%= link_to plant_path(plant) do %>
@@ -51,7 +63,6 @@
     <% end %>
   </div>
 
-  <p class="text-centred my-5"><%= link_to "Load more", plants_path(@plant), class: "btn btn-normal" %></p>
 </div>
 
 <%= render "shared/footer" %>

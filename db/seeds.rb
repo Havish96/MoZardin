@@ -34,6 +34,7 @@ aquatic = Category.create(name: 'Water & Aquatic',
                                        "macrophyte is a plant that grows in or near water and is either emergent," \
                                        "submergent, or floating.")
 
+
 puts "Creating 16 plants ..."
 
 # Category - Fruits & Vegetables

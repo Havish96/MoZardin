@@ -10,7 +10,7 @@
       <p>Botanical name: <%= @plant.scientific_name %></p>
       <p>Category: <%= @plant.category.name %></p>
       <p><%= @plant.description %></p>
-      <p><%= link_to "Add to garden", "#", class: "btn btn-normal" %> <span><%= link_to "Wikiplants", "#", class: "btn btn-normal" %></span>  </p>
+      <p><button type="button" class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to garden</button> <span><%= link_to "Wikiplants", "#", class: "btn btn-normal" %></span>  </p>
     </div>
   </div>
 
@@ -68,20 +68,23 @@
 
 <%= render 'shared/footer' %>
 
-<!-- Button trigger modal -->
-<%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></button> %>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
       <div class="modal-body">
-
+      <%= simple_form_for @tag do |f| %>
+        <%= f.input :age, placeholder: "Weeks" ,label: 'The age of your plant', error: 'Age is mandatory, please specify' %>
+        <%= f.association :garden, collection: Garden.where(user: current_user), data:{placeholder: "Garden name"} %>
+        <%= f.input :location, placeholder: "outdoor, interior, etc..." ,label: 'The location of your plant', error: 'Location is mandatory, please specify' %>
+        <%= f.input :plant_id, as: "hidden", input_html: { value: @plant.id } %>
+      <div class="d-flex justify-content-between">
+       <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="width:50%">Cancel</button>
+       <%= f.submit "Confirm", class:"btn btn-normal", style:"width:50%" %>
       </div>
-      <div class="modal-footer">
+        <% end %>
+      </div>
+      </div>
       </div>
     </div>
   </div>

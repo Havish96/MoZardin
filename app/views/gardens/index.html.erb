@@ -20,6 +20,10 @@
 
   <%= simple_form_for(@garden) do |f| %>
     <%= f.input :name, placeholder: "e.g Garden 1", label: false %>
+
+    <div class="inline-form">
+      <%= f.submit "Create garden", class:"btn btn-primary text-justify" %>
+    </div>
   <% end %>
 
 </div>

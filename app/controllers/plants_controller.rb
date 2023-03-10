@@ -17,6 +17,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @condition = Condition.find_by(plant: @plant)
     @plants = Plant.where(category_id: @plant.category_id)
     @tag = Tag.new
   end

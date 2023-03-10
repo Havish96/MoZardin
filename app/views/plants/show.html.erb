@@ -6,10 +6,12 @@
   <div class="plant-header my-5">
     <%= cl_image_tag @plant.photo.key, class: "plant-img"%>
     <div class="content-text">
-      <p class="mb-4"><%= @plant.name %></p>
-      <p>Botanical name: <%= @plant.scientific_name %></p>
-      <p>Category: <%= @plant.category.name %></p>
+      <h2 class="mb-4"><%= @plant.name %></h2>
+      <p><strong>Botanical name: </strong><%= @plant.scientific_name %></p>
+      <p><strong>Category: </strong><%= @plant.category.name %></p>
       <p><%= @plant.description %></p>
+      <h4>Instruction</h4>
+      <p><%= @plant.instruction %></p>
       <p><button type="button" class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to garden</button> <span><%= link_to "Wikiplants", "#", class: "btn btn-normal" %></span>  </p>
     </div>
   </div>
@@ -19,17 +21,17 @@
     <div class="condition-card">
       <i class="fa-solid fa-cloud-sun icon mb-4"></i>
       <p class="mb-2">Sunlight Exposure</p>
-      <p>*****</p>
+      <p><%= @condition.sun %></p>
     </div>
     <div class="condition-card mb-4">
       <i class="fa-solid fa-water icon mb-4"></i>
       <p class="mb-2">Water</p>
-      <p>*****</p>
+      <p><%= @condition.water %></p>
     </div>
     <div class="condition-card mb-4">
       <i class="fa-solid fa-temperature-quarter icon mb-4"></i>
       <p class="mb-2">Temperature</p>
-      <p>*****</p>
+      <p><%= @condition.climate %></p>
     </div>
   </div>
 
@@ -48,8 +50,9 @@
           <% end %>
 
           <div class="text">
-            <p><%= plant.name %></p>
-            <p><%= plant.description %></p>
+            <p class='text-center'><strong><%= plant.name %></strong></p>
+            <p class='mb-1'><%= plant.scientific_name %></p>
+            <p>Origin: <%= plant.origin %></p>
           </div>
 
         <% end %>

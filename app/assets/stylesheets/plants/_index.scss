@@ -17,14 +17,13 @@
   justify-content: center;
 
   .card {
-    height: 200px;
-    width: 280px;
+    height: 150px;
+    width: 270px;
     border-radius: 8px;
     background-size: cover;
     border: none;
     box-shadow: 0px 2px 9px 1px rgba(0, 0, 0, 0.16);
     margin: 20px;
-    cursor: pointer;
   }
 }
 
@@ -57,9 +56,4 @@
     background-image: url(https://images.unsplash.com/photo-1445282768818-728615cc910a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
     }
 
-}
-
-.text-deco {
-  text-decoration: none;
-  color: white;
 }

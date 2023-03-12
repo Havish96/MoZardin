@@ -6,6 +6,7 @@
 <% @tags.each do |tag| %>
   <% plant_id = tag.plant_id %>
   <% plant = Plant.find(plant_id) %>
+  <% @condition = Condition.where(plant_id: plant) %>
 
   <div class="garden-card" onclick="this.classList.toggle('expanded')">
     <p><%= plant.name %></p>
@@ -18,7 +19,7 @@
         <div class="body-text">
           <div>
             <p><i class="fa-solid fa-cloud-sun fa-2x"></i></p>
-            <p><strong>6hrs</strong></p>
+            <p><strong><%#= @condition.first.sun %></strong></p>
           </div>
           <div>
             <p><i class="fa-solid fa-droplet fa-2x"></i></p>

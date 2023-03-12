@@ -12,7 +12,7 @@ class GardensController < ApplicationController
     if @garden.save
       redirect_to garden_path(@garden)
     else
-      render "gardens/index", status: :unprocessable_entity
+      redirect_to gardens_path, status: :unprocessable_entity
     end
   end
 

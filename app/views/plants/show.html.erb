@@ -12,7 +12,7 @@
       <p><%= @plant.description %></p>
       <h4>Instruction</h4>
       <p><%= @plant.instruction %></p>
-      <p><button type="button" class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to garden</button> <span><%= link_to "Wikiplants", "#", class: "btn btn-normal" %></span>  </p>
+      <p><button type="button" class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to garden</button> <span><%= link_to "Guides", guides_path(@guides), class: "btn btn-normal" %></span>  </p>
     </div>
   </div>
 

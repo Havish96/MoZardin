@@ -18,6 +18,7 @@ class GardensController < ApplicationController
 
   def show
     @garden = Garden.find(params[:id])
+    @tags = Tag.all.where(garden_id: @garden)
   end
 
   private

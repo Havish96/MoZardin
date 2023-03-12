@@ -1,19 +1,23 @@
 <%= render 'shared/navbar' %>
 
-<div class="container mb-5">
-
-  <!-- Plant header -->
-  <div class="plant-header my-5">
-    <%= cl_image_tag @plant.photo.key, class: "plant-img"%>
-    <div class="content-text">
-      <h2 class="mb-4"><%= @plant.name %></h2>
-      <p><strong>Botanical name: </strong><%= @plant.scientific_name %></p>
-      <p><strong>Category: </strong><%= @plant.category.name %></p>
-      <p><%= @plant.description %></p>
-      <h4>Instruction</h4>
-      <p><%= @plant.instruction %></p>
-      <p><button type="button" class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to garden</button> <span><%= link_to "Guides", guides_path(@guides), class: "btn btn-normal" %></span>  </p>
+<!-- Plant header 2 -->
+  <div class="plant-wrap">
+    <div class="plant-card">
+      <div class="plant-card-pic-wrap">
+        <%= cl_image_tag @plant.photo.key %>
+      </div>
+      <div class="plant-card-content">
+        <h3><%= @plant.name %></h3>
+        <p><strong>Botanical name: </strong><%= @plant.scientific_name %></p>
+        <p><strong>Category: </strong><%= @plant.category.name %></p>
+        <p><%= @plant.description %></p>
+        <a  class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to my garden</a>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <h4 class="text-centred">Instruction</h4>
+    <p class="text-centred"><%= @plant.instruction %></p>
   </div>
 
   <!-- Conditions -->

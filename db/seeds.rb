@@ -1,6 +1,9 @@
 require "open-uri"
 
+puts 'Destroying all Conditions'
 Condition.destroy_all
+puts 'Destroying all Tags'
+Tag.destroy_all
 puts "Destroying all Plants"
 Plant.destroy_all
 puts 'Destroying all Categories'
@@ -46,12 +49,13 @@ plant1 = Plant.new(name: 'Tomato',
                    instruction: "Plant seedlings in open beds when they are 100-120mm tall. Seedlings of tall-growing" \
                                 " hybrids can be planted 500mm apart in the row.")
 plant1.category = fruits
-plant1_photo = URI.open('https://images.unsplash.com/photo-1592841200221-a6898f307baa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80')
+plant1_photo = URI.open('https://freepngimg.com/thumb/tomato/6-tomato-png-image.png')
 plant1.photo.attach(io: plant1_photo, filename: "#{plant1.name}.png", content_type: "image/png")
 plant1.save
 cond1 = Condition.new(sun: '6 or more hours', water: 'Requires regular watering', climate: '10˚C to 38˚C')
 cond1.plant = plant1
 cond1.save
+puts "created Tomato"
 
 plant2 = Plant.new(name: 'Cucumber',
                    description: "When grown naturally outdoors, cucumbers are warm-season vegetables that utilize" \
@@ -64,12 +68,13 @@ plant2 = Plant.new(name: 'Cucumber',
                                 " which inhibits weeds. They are creeping vines that generally need a trellis or" \
                                 " supporting frame, but can also be grown in rows or basins 300mm across and ±1m apart.")
 plant2.category = fruits
-plant2_photo = URI.open('https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2022/05/iStock-1298556952-how-to-grow-cucumbers.jpg')
+plant2_photo = URI.open('https://purepng.com/public/uploads/large/purepng.com-cucumbercucumbervegetablespicklegreenfoodhealthycucumbers-481522161925n6wbx.png')
 plant2.photo.attach(io: plant2_photo, filename: "#{plant2.name}.png", content_type: "image/png")
 plant2.save
 cond2 = Condition.new(sun: '6 or more hours', water: 'Requires regular watering', climate: '23˚C to 30˚C')
 cond2.plant = plant2
 cond2.save
+puts "created Cucumber"
 
 plant3 = Plant.new(name: 'Strawberry',
                    description: "Strawberries are very adaptable and will grow everywhere, although the flavour" \
@@ -80,12 +85,13 @@ plant3 = Plant.new(name: 'Strawberry',
                    " good crop in early summer. use compost- enriched soil and mulch to preserve soil moisture. Water" \
                    " regularly and feed once a month with liquid fertilizer during the active growing season.")
 plant3.category = fruits
-plant3_photo = URI.open('https://images.unsplash.com/photo-1602083158217-c608d17c44e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80')
+plant3_photo = URI.open('https://static.vecteezy.com/system/resources/previews/008/848/372/original/fresh-red-strawberry-fruit-free-png.png')
 plant3.photo.attach(io: plant3_photo, filename: "#{plant3.name}.png", content_type: "image/png")
 plant3.save
 cond3 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '12˚C to 27˚C')
 cond3.plant = plant3
 cond3.save
+puts "created Strawberry"
 
 plant4 = Plant.new(name: 'Pumpkin',
                    description: "Pumpkins, squash, marrows and courgettes (baby marrows) all fall into the same" \
@@ -97,12 +103,13 @@ plant4 = Plant.new(name: 'Pumpkin',
                    ' and 2m apart; well-enriched soil with good drainage is best. Plant near mealies, beans and' \
                    ' radishes. also plant garlic and chives near them, this helps with mildew.')
 plant4.category = fruits
-plant4_photo = URI.open('https://images.unsplash.com/photo-1515589654462-a9881e276b84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+plant4_photo = URI.open('https://www.freepnglogos.com/uploads/pumpkin-png/pumpkin-pumpkins-westmoreland-berry-farm-0.png')
 plant4.photo.attach(io: plant4_photo, filename: "#{plant4.name}.png", content_type: "image/png")
 plant4.save
 cond4 = Condition.new(sun: '6 to 8 hours', water: 'Requires regular watering', climate: '19˚C to 35˚C')
 cond4.plant = plant4
 cond4.save
+puts "created Pumpkin"
 
 # Category - Herbs
 plant5 = Plant.new(name: 'Garlic',
@@ -115,12 +122,13 @@ plant5 = Plant.new(name: 'Garlic',
                                 ' apart. This plant relies on well-prepared soil. Seed can be sown in trays filled' \
                                 ' with sand in spring or autumn. Keep moist and protected until strong enough to handle')
 plant5.category = herbs
-plant5_photo = URI.open('https://images.squarespace-cdn.com/content/v1/5324bf63e4b05fc1fc6ea99d/1540800074825-GFN9NEXA0V899OCQK8O4/allium-sativum_bloem-garlic.jpg?format=1500w')
+plant5_photo = URI.open('https://pngimg.com/d/garlic_PNG12775.png')
 plant5.photo.attach(io: plant5_photo, filename: "#{plant5.name}.png", content_type: "image/png")
 plant5.save
 cond5 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '5˚C to 15˚C')
 cond5.plant = plant5
 cond5.save
+puts "created Garlic"
 
 plant6 = Plant.new(name: 'Coriander',
                    description: 'One of the top five favourite spices in the world. An annual herb with dark green,' \
@@ -133,12 +141,13 @@ plant6 = Plant.new(name: 'Coriander',
                                 ' so don\'t grow these plants near each other. It can be placed in a large pot on a' \
                                 ' veranda or patio.')
 plant6.category = herbs
-plant6_photo = URI.open('https://images.unsplash.com/photo-1588879460618-9249e7d947d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+plant6_photo = URI.open('https://assets.stickpng.com/images/58bf1e87e443f41d77c734b6.png')
 plant6.photo.attach(io: plant6_photo, filename: "#{plant6.name}.png", content_type: "image/png")
 plant6.save
 cond6 = Condition.new(sun: '5 to 10 hours', water: 'Requires regular watering', climate: '17˚C to 28˚C')
 cond6.plant = plant6
 cond6.save
+puts "created Coriander"
 
 plant7 = Plant.new(name: 'Peppermint',
                    description: 'A spreading perennial herb with dark green leaves and reddish stems. The leaves are' \
@@ -149,12 +158,13 @@ plant7 = Plant.new(name: 'Peppermint',
                                 ' climate with well-draining, loose, organically-rich soil. Keep the area around your' \
                                 ' mint free of weeds.')
 plant7.category = herbs
-plant7_photo = URI.open('https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/mint-planting-growing-harvesting.jpg?itok=zOGB9Ch_')
+plant7_photo = URI.open('https://www.pngarts.com/files/1/Peppermint-PNG-Picture.png')
 plant7.photo.attach(io: plant7_photo, filename: "#{plant7.name}.png", content_type: "image/png")
 plant7.save
 cond7 = Condition.new(sun: '2 to 5 hours', water: 'Requires regular watering', climate: '12˚C to 22˚C')
 cond7.plant = plant7
 cond7.save
+puts "created Peppermint"
 
 plant8 = Plant.new(name: 'Thyme',
                    description: 'A woody, low-growing plant with stiff stems covered in strongly aromatic, small,' \
@@ -165,12 +175,13 @@ plant8 = Plant.new(name: 'Thyme',
                    instruction: ' Ideal for pots in full sun. Thyme planted along pathways and around vegetable' \
                                 ' gardens, keeps out insects.')
 plant8.category = herbs
-plant8_photo = URI.open('https://images.unsplash.com/photo-1594027308808-24b68af6829b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80')
+plant8_photo = URI.open('https://assets.stickpng.com/images/58bf1e33e443f41d77c734ac.png')
 plant8.photo.attach(io: plant8_photo, filename: "#{plant8.name}.png", content_type: "image/png")
 plant8.save
 cond8 = Condition.new(sun: '8 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 32˚C')
 cond8.plant = plant8
 cond8.save
+puts "created Thyme"
 
 # Category - Trees
 plant9 = Plant.new(name: 'Baobab',
@@ -189,6 +200,7 @@ plant9.save
 cond9 = Condition.new(sun: '8 to 12 hours', water: 'Requires moderate/little watering', climate: '14˚C to 35˚C')
 cond9.plant = plant9
 cond9.save
+puts "created Baobab"
 
 plant10 = Plant.new(name: 'Flamboyant',
                     description: 'Only suitable for the warmer areas of the country and for very large gardens. A' \
@@ -205,6 +217,7 @@ plant10.save
 cond10 = Condition.new(sun: '8 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 30˚C')
 cond10.plant = plant10
 cond10.save
+puts "created Flamboyant"
 
 plant11 = Plant.new(name: 'Pod Mahogany',
                     description: 'A handsome tree with a spreading crown. Sprays of pinkish-red flowers appear in' \
@@ -222,6 +235,7 @@ plant11.save
 cond11 = Condition.new(sun: '8 to 12 hours', water: 'Requires moderate/little watering', climate: '20˚C to 30˚C')
 cond11.plant = plant11
 cond11.save
+puts "created Pod Mohagany"
 
 plant12 = Plant.new(name: 'Alexandra palm, king palm',
                     description: 'The King Palm has a solitary, smooth, light-grey trunk that is “crowned” with a' \
@@ -241,9 +255,10 @@ plant12.save
 cond12 = Condition.new(sun: '3 to 6 hours', water: 'Requires regular watering', climate: '20˚C to 35˚C')
 cond12.plant = plant12
 cond12.save
+puts "created King Palm"
 
 # Category - Aquatic
-plant13 = Plant.new(name: 'Sweet Calamus, Flagroot',
+plant13 = Plant.new(name: 'Sweet Calamus',
                     description: 'A grass-like perennial plant with white-and-green variegated leaves up to about' \
                                  ' 0.5m long. An ideal focus plant, it tolerates short periods of drought. Acorus is' \
                                  ' dormant in winter. It makes a good bog garden plant for pond margins.',
@@ -258,6 +273,7 @@ plant13.save
 cond13 = Condition.new(sun: '6 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 27˚C')
 cond13.plant = plant13
 cond13.save
+puts "created Sweet Calamus"
 
 plant14 = Plant.new(name: 'Creeping lily turf',
                     description: 'Excellent for mass display and colour- contrast planting. Liriope has thick' \
@@ -277,6 +293,7 @@ plant14.save
 cond14 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '20˚C to 25˚C')
 cond14.plant = plant14
 cond14.save
+puts "created Creeping Lily"
 
 plant15 = Plant.new(name: 'Water lily',
                     description: 'Water lilies are jewels of the aquatic world. They and closely related lotus' \
@@ -289,12 +306,13 @@ plant15 = Plant.new(name: 'Water lily',
                     ' soil does not fall through the cracks. Several sheets of newspaper can be placed on the bottom' \
                     ' of containers for the same purpose.')
 plant15.category = aquatic
-plant15_photo = URI.open('https://images.unsplash.com/photo-1541354254661-adb801adb23e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80')
+plant15_photo = URI.open('https://www.pikpng.com/pngl/b/85-850710_pink-water-lily-png-clipart-image-water-lily.png')
 plant15.photo.attach(io: plant15_photo, filename: "#{plant15.name}.png", content_type: "image/png")
 plant15.save
 cond15 = Condition.new(sun: '8 to 10 hours', water: 'Must be planted in water', climate: '20˚C to 35˚C')
 cond15.plant = plant15
 cond15.save
+puts "created Water lily"
 
 plant16 = Plant.new(name: 'Sacred Lotus',
                     description: 'The Sacred Lotus in reference to the sacred and symbolic status the flower holds' \
@@ -308,12 +326,13 @@ plant16 = Plant.new(name: 'Sacred Lotus',
                     ' of water covering the crowns. Container grown plants are easier to control and, if desired, to' \
                     ' move to other locations.')
 plant16.category = aquatic
-plant16_photo = URI.open('https://images.unsplash.com/photo-1533305023562-381612b1f229?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+plant16_photo = URI.open('https://pngimg.com/uploads/lotus_flower/lotus_flower_PNG47.png')
 plant16.photo.attach(io: plant16_photo, filename: "#{plant16.name}.png", content_type: "image/png")
 plant16.save
 cond16 = Condition.new(sun: '8 to 12 hours', water: 'Must be planted in water', climate: '20˚C to 35˚C')
 cond16.plant = plant16
 cond16.save
+puts "created Lotus"
 
 # Guides
 Guide.destroy_all

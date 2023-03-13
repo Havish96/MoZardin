@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :guides, only: %i[index show]
   resources :tags, only: %i[create]
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
 end

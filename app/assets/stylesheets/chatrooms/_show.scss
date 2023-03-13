@@ -74,7 +74,8 @@ body::-webkit-scrollbar-thumb {
   p {
     margin: 0;
     padding: 8px 16px;
-    background-color: antiquewhite;
+    background: linear-gradient(90.54deg, #60A9F6 0%, #2A8BF2 100%);
+    color: white;
     border-radius: 6px;
   }
 }
@@ -86,6 +87,12 @@ body::-webkit-scrollbar-thumb {
 .message-right {
   display: flex;
   justify-content: flex-end;
+  // p:first-child {
+  //   background: ;
+  //   background-color: #FFFFFF;
+  //   border: 1px solid black;
+  //   box-shadow: 10px 10px 25px rgba(112, 124, 151, 0.05), 15px 15px 35px rgba(112, 124, 151, 0.05);
+  // }
   .right-timer {
     display: flex;
     justify-content: flex-end;
@@ -98,4 +105,8 @@ body::-webkit-scrollbar-thumb {
   margin-top: -28px;
   margin-left: 64px;
   font-size: 14px;
+}
+
+.btn-chat {
+  background: none;
 }

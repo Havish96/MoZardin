@@ -17,6 +17,10 @@ class GardensController < ApplicationController
   end
 
   def destroy
+    @plant = Plant.find(params[:id])
+    @plant.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to garden_path(params_tag[:garden_id])
   end
 
   def show

@@ -1,8 +1,8 @@
 <%= render 'shared/navbar' %>
 
 <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1>#<%= @chatroom.name %></h1>
-
+  <h2 class="text-centred mt-4">#<%= @chatroom.name %></h2 class="text-centred mt-4">
+  <hr>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
@@ -16,6 +16,6 @@
       placeholder: "Type your message here ...",
       wrapper_html: {class: "flex-grow-1"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3 btn-chat" %>
   <% end %>
 </div>

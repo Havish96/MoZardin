@@ -80,11 +80,11 @@
     <div class="modal-content">
       <div class="modal-body">
       <%= simple_form_for @tag do |f| %>
-          <%= f.input :age, as: :date %>
         <div class="d-flex justify-content-around">
+          <%= f.input :age, as: :date, html5: true %>
           <%= f.association :garden, prompt: "Please select a garden", collection: Garden.where(user: current_user) %>
-        <%= f.input :location, prompt:"Please set a location", collection: %w[Outdoor Indoor], error: 'Location is mandatory, please specify' %>
         </div>
+        <%= f.input :location, prompt:"Please set a location", collection: %w[Outdoor Indoor], error: 'Location is mandatory, please specify' %>
         <%= f.input :plant_id, as: "hidden", input_html: { value: @plant.id } %>
       <div class="d-flex justify-content-between">
        <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="width:50%">Cancel</button>

@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :gardens, only: %i[create show index new]
   resources :guides, only: %i[index show]
   resources :tags, only: %i[create]
-  resources :chatrooms, only: :show
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end

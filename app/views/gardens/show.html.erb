@@ -7,7 +7,10 @@
   <% plant_id = tag.plant_id %>
   <% plant = Plant.find(plant_id) %>
   <% @condition = Condition.where(plant_id: plant) %>
-
+ <div class= "weather">
+  <ul class="conditions">
+  </ul>
+ </div>
   <div class="garden-card" onclick="this.classList.toggle('expanded')">
     <p><%= plant.name %></p>
     <!-- visible content -->

@@ -10,8 +10,11 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0.025);
   text-align: center;
   transition: height 500ms;
-  width: 260px;
+  min-width: 260px;
   overflow: hidden;
+  img {
+    margin: 0 auto;
+  }
 }
 
 .garden-card > p {

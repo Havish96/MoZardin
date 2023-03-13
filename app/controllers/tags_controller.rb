@@ -8,6 +8,12 @@ class TagsController < ApplicationController
     end
   end
 
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    redirect_to garden_path(params_tag[:garden_id])
+  end
+
   private
 
   def params_tag

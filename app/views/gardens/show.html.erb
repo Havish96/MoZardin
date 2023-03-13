@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-
+  <div data-controller="weather">
 <h1 class="title my-5">Plants in your garden</h1>
 
 <div class="container garden-container mb-5">
@@ -7,10 +7,8 @@
   <% plant_id = tag.plant_id %>
   <% plant = Plant.find(plant_id) %>
   <% @condition = Condition.where(plant_id: plant) %>
- <div class= "weather">
-  <ul class="conditions">
-  </ul>
- </div>
+
+
   <div class="garden-card" onclick="this.classList.toggle('expanded')">
     <p><%= plant.name %></p>
     <!-- visible content -->

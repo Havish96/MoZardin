@@ -52,7 +52,7 @@ plant1.category = fruits
 plant1_photo = URI.open('https://freepngimg.com/thumb/tomato/6-tomato-png-image.png')
 plant1.photo.attach(io: plant1_photo, filename: "#{plant1.name}.png", content_type: "image/png")
 plant1.save
-cond1 = Condition.new(sun: '6 or more hours', water: 'Requires regular watering', climate: '10˚C to 38˚C')
+cond1 = Condition.new(sun: 'min 6hrs', water: 'Regular', climate: '10-38˚C')
 cond1.plant = plant1
 cond1.save
 puts "created Tomato"
@@ -71,7 +71,7 @@ plant2.category = fruits
 plant2_photo = URI.open('https://purepng.com/public/uploads/large/purepng.com-cucumbercucumbervegetablespicklegreenfoodhealthycucumbers-481522161925n6wbx.png')
 plant2.photo.attach(io: plant2_photo, filename: "#{plant2.name}.png", content_type: "image/png")
 plant2.save
-cond2 = Condition.new(sun: '6 or more hours', water: 'Requires regular watering', climate: '23˚C to 30˚C')
+cond2 = Condition.new(sun: 'min 6hrs', water: 'Regular', climate: '23-30˚C')
 cond2.plant = plant2
 cond2.save
 puts "created Cucumber"
@@ -88,7 +88,7 @@ plant3.category = fruits
 plant3_photo = URI.open('https://static.vecteezy.com/system/resources/previews/008/848/372/original/fresh-red-strawberry-fruit-free-png.png')
 plant3.photo.attach(io: plant3_photo, filename: "#{plant3.name}.png", content_type: "image/png")
 plant3.save
-cond3 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '12˚C to 27˚C')
+cond3 = Condition.new(sun: '8-10hrs', water: 'Regular', climate: '12-27˚C')
 cond3.plant = plant3
 cond3.save
 puts "created Strawberry"
@@ -106,7 +106,7 @@ plant4.category = fruits
 plant4_photo = URI.open('https://www.freepnglogos.com/uploads/pumpkin-png/pumpkin-pumpkins-westmoreland-berry-farm-0.png')
 plant4.photo.attach(io: plant4_photo, filename: "#{plant4.name}.png", content_type: "image/png")
 plant4.save
-cond4 = Condition.new(sun: '6 to 8 hours', water: 'Requires regular watering', climate: '19˚C to 35˚C')
+cond4 = Condition.new(sun: '6-8hrs', water: 'Regular', climate: '19-35˚C')
 cond4.plant = plant4
 cond4.save
 puts "created Pumpkin"
@@ -125,7 +125,7 @@ plant5.category = herbs
 plant5_photo = URI.open('https://pngimg.com/d/garlic_PNG12775.png')
 plant5.photo.attach(io: plant5_photo, filename: "#{plant5.name}.png", content_type: "image/png")
 plant5.save
-cond5 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '5˚C to 15˚C')
+cond5 = Condition.new(sun: '8-10hrs', water: 'Regular', climate: '5-15˚C')
 cond5.plant = plant5
 cond5.save
 puts "created Garlic"
@@ -144,7 +144,7 @@ plant6.category = herbs
 plant6_photo = URI.open('https://assets.stickpng.com/images/58bf1e87e443f41d77c734b6.png')
 plant6.photo.attach(io: plant6_photo, filename: "#{plant6.name}.png", content_type: "image/png")
 plant6.save
-cond6 = Condition.new(sun: '5 to 10 hours', water: 'Requires regular watering', climate: '17˚C to 28˚C')
+cond6 = Condition.new(sun: '5-10hrs', water: 'Regular', climate: '17-28˚C')
 cond6.plant = plant6
 cond6.save
 puts "created Coriander"
@@ -161,7 +161,7 @@ plant7.category = herbs
 plant7_photo = URI.open('https://www.pngarts.com/files/1/Peppermint-PNG-Picture.png')
 plant7.photo.attach(io: plant7_photo, filename: "#{plant7.name}.png", content_type: "image/png")
 plant7.save
-cond7 = Condition.new(sun: '2 to 5 hours', water: 'Requires regular watering', climate: '12˚C to 22˚C')
+cond7 = Condition.new(sun: '2-5hrs', water: 'Regular', climate: '12-22˚C')
 cond7.plant = plant7
 cond7.save
 puts "created Peppermint"
@@ -178,7 +178,7 @@ plant8.category = herbs
 plant8_photo = URI.open('https://assets.stickpng.com/images/58bf1e33e443f41d77c734ac.png')
 plant8.photo.attach(io: plant8_photo, filename: "#{plant8.name}.png", content_type: "image/png")
 plant8.save
-cond8 = Condition.new(sun: '8 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 32˚C')
+cond8 = Condition.new(sun: '8-12hrs', water: 'Regular', climate: '20-32˚C')
 cond8.plant = plant8
 cond8.save
 puts "created Thyme"
@@ -197,7 +197,7 @@ plant9.category = trees
 plant9_photo = URI.open('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8d701ac9-5f2f-46b0-bcd4-603768c2c88f/ddaexar-864a964e-c17e-4300-a6d6-77b68fcbe0db.png/v1/fill/w_800,h_579,strp/baobab_tree_png_4_by_gareng92_ddaexar-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc5IiwicGF0aCI6IlwvZlwvOGQ3MDFhYzktNWYyZi00NmIwLWJjZDQtNjAzNzY4YzJjODhmXC9kZGFleGFyLTg2NGE5NjRlLWMxN2UtNDMwMC1hNmQ2LTc3YjY4ZmNiZTBkYi5wbmciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kAw-3wG6uUgACfbHYWVbh4GUGNy6faEGkMOrSHhqJX4')
 plant9.photo.attach(io: plant9_photo, filename: "#{plant9.name}.png", content_type: "image/png")
 plant9.save
-cond9 = Condition.new(sun: '8 to 12 hours', water: 'Requires moderate/little watering', climate: '14˚C to 35˚C')
+cond9 = Condition.new(sun: '8-12hrs', water: 'Moderate', climate: '14-35˚C')
 cond9.plant = plant9
 cond9.save
 puts "created Baobab"
@@ -214,7 +214,7 @@ plant10.category = trees
 plant10_photo = URI.open('https://www.seekpng.com/png/full/989-9899063_flamboyant-trees-tree-red-flowers-nature-flame-tree.png')
 plant10.photo.attach(io: plant10_photo, filename: "#{plant10.name}.png", content_type: "image/png")
 plant10.save
-cond10 = Condition.new(sun: '8 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 30˚C')
+cond10 = Condition.new(sun: '8-12hrs', water: 'Regular', climate: '20-30˚C')
 cond10.plant = plant10
 cond10.save
 puts "created Flamboyant"
@@ -232,7 +232,7 @@ plant11.category = trees
 plant11_photo = URI.open('https://www.featheredaddictions.com/assets/images/be716551-5e6e-4914-b2a6-8bfe2f5c029d_clipped_rev_1.png')
 plant11.photo.attach(io: plant11_photo, filename: "#{plant11.name}.png", content_type: "image/png")
 plant11.save
-cond11 = Condition.new(sun: '8 to 12 hours', water: 'Requires moderate/little watering', climate: '20˚C to 30˚C')
+cond11 = Condition.new(sun: '8-12hrs', water: 'Moderate', climate: '20-30˚C')
 cond11.plant = plant11
 cond11.save
 puts "created Pod Mohagany"
@@ -252,7 +252,7 @@ plant12.category = trees
 plant12_photo = URI.open('https://t4.ftcdn.net/jpg/05/45/43/21/360_F_545432118_g4tGW0iNZ0Idx7y4rP5Im9O40XiUjB6H.png')
 plant12.photo.attach(io: plant12_photo, filename: "#{plant12.name}.png", content_type: "image/png")
 plant12.save
-cond12 = Condition.new(sun: '3 to 6 hours', water: 'Requires regular watering', climate: '20˚C to 35˚C')
+cond12 = Condition.new(sun: '3-6hrs', water: 'Regular', climate: '20-35˚C')
 cond12.plant = plant12
 cond12.save
 puts "created King Palm"
@@ -270,7 +270,7 @@ plant13.category = aquatic
 plant13_photo = URI.open('http://cdn.shopify.com/s/files/1/0245/3785/8100/products/vekhand-removebg-preview.png?v=1656400277')
 plant13.photo.attach(io: plant13_photo, filename: "#{plant13.name}.png", content_type: "image/png")
 plant13.save
-cond13 = Condition.new(sun: '6 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 27˚C')
+cond13 = Condition.new(sun: '6-12hrs', water: 'Regular', climate: '20-27˚C')
 cond13.plant = plant13
 cond13.save
 puts "created Sweet Calamus"
@@ -290,7 +290,7 @@ plant14.category = aquatic
 plant14_photo = URI.open('https://cdn.shopify.com/s/files/1/0557/1792/0934/products/Big-Blue-Liriope-Pot-500-removebg-preview_195x195@2x.png?v=1623995030')
 plant14.photo.attach(io: plant14_photo, filename: "#{plant14.name}.png", content_type: "image/png")
 plant14.save
-cond14 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '20˚C to 25˚C')
+cond14 = Condition.new(sun: '8-10hrs', water: 'Regular', climate: '20-25˚C')
 cond14.plant = plant14
 cond14.save
 puts "created Creeping Lily"
@@ -309,7 +309,7 @@ plant15.category = aquatic
 plant15_photo = URI.open('https://www.pikpng.com/pngl/b/85-850710_pink-water-lily-png-clipart-image-water-lily.png')
 plant15.photo.attach(io: plant15_photo, filename: "#{plant15.name}.png", content_type: "image/png")
 plant15.save
-cond15 = Condition.new(sun: '8 to 10 hours', water: 'Must be planted in water', climate: '20˚C to 35˚C')
+cond15 = Condition.new(sun: '8-10hrs', water: 'Aquatic', climate: '20-35˚C')
 cond15.plant = plant15
 cond15.save
 puts "created Water lily"
@@ -329,7 +329,7 @@ plant16.category = aquatic
 plant16_photo = URI.open('https://pngimg.com/uploads/lotus_flower/lotus_flower_PNG47.png')
 plant16.photo.attach(io: plant16_photo, filename: "#{plant16.name}.png", content_type: "image/png")
 plant16.save
-cond16 = Condition.new(sun: '8 to 12 hours', water: 'Must be planted in water', climate: '20˚C to 35˚C')
+cond16 = Condition.new(sun: '8-12hrs', water: 'Aquatic', climate: '20-35˚C')
 cond16.plant = plant16
 cond16.save
 puts "created Lotus"

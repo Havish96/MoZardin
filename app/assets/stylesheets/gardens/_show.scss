@@ -29,7 +29,6 @@
 .label {
   transform: translateY(10px);
   transition: transform 1000ms;
-  mix-blend-mode: multiply;
 }
 
 .garden-card.expanded .label {
@@ -37,14 +36,16 @@
 }
 
 .text1 {
--webkit-clip-path: inset(0 0 0 0);
-clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
   transition: clip-path 1000ms;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .garden-card.expanded .text1 {
--webkit-clip-path: inset(0 0 0 0);
-clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
 }
 
 .garden-text-content {

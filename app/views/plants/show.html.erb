@@ -80,9 +80,11 @@
     <div class="modal-content">
       <div class="modal-body">
       <%= simple_form_for @tag do |f| %>
-        <%= f.input :age, placeholder: "Weeks" ,label: 'The age of your plant', error: 'Age is mandatory, please specify' %>
-        <%= f.association :garden, collection: Garden.where(user: current_user), data:{placeholder: "Garden name"} %>
-        <%= f.input :location, placeholder: "outdoor, interior, etc..." ,label: 'The location of your plant', error: 'Location is mandatory, please specify' %>
+          <%= f.input :age, as: :date %>
+        <div class="d-flex justify-content-around">
+          <%= f.association :garden, prompt: "Please select a garden", collection: Garden.where(user: current_user) %>
+        <%= f.input :location, prompt:"Please set a location", collection: %w[Outdoor Indoor], error: 'Location is mandatory, please specify' %>
+        </div>
         <%= f.input :plant_id, as: "hidden", input_html: { value: @plant.id } %>
       <div class="d-flex justify-content-between">
        <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="width:50%">Cancel</button>

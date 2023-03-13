@@ -41,23 +41,22 @@
 
   <p class="mt-4 text-centred">All plants in library</p>
 
-  <div class="plant-cards mb-5">
+  <div class="contenedorCards">
     <% @plants.each do |plant| %>
       <div class="card">
         <%= link_to plant_path(plant) do %>
-
-          <% if plant.photo.attached? %>
-            <div class="img" style="background-image:url('<%= cl_image_path plant.photo.key %>')";></div>
-          <% else %>
-            <div class="img-none"><p>No Image</p></div>
-          <% end %>
-
-          <div class="text">
-            <p class='text-center'><strong><%= plant.name %></strong></p>
-            <p class='mb-1'><%= plant.scientific_name %></p>
-            <p>Origin: <%= plant.origin %></p>
+          <div class="wrapper">
+            <div class="colorProd"></div>
+            <div class="imgProd" style="background-image: url('<%= cl_image_path plant.photo.key %>');"></div>
+            <div class="infoProd">
+              <p class="nombreProd"><%= plant.name %></p>
+              <p class="extraInfo"><strong><%= plant.scientific_name %></strong></p>
+              <p class="extraInfo"><strong>Origin: <%= plant.origin %></strong></p>
+              <%# <div class="actions">
+                <a href="">Add to my garden</a>
+              </div> %>
+            </div>
           </div>
-
         <% end %>
       </div>
     <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_061717) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_101205) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,6 +83,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_061717) do
     t.string "image_url"
   end
 
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -124,6 +132,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_061717) do
     t.bigint "plant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "list_id"
+    t.index ["list_id"], name: "index_tasks_on_list_id"
     t.index ["plant_id"], name: "index_tasks_on_plant_id"
   end
 
@@ -144,10 +154,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_061717) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "conditions", "plants"
   add_foreign_key "gardens", "users"
+  add_foreign_key "lists", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "plants", "categories"
   add_foreign_key "tags", "gardens"
   add_foreign_key "tags", "plants"
+  add_foreign_key "tasks", "lists"
   add_foreign_key "tasks", "plants"
 end

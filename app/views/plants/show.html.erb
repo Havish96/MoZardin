@@ -1,19 +1,23 @@
 <%= render 'shared/navbar' %>
 
-<div class="container mb-5">
-
-  <!-- Plant header -->
-  <div class="plant-header my-5">
-    <%= cl_image_tag @plant.photo.key, class: "plant-img"%>
-    <div class="content-text">
-      <h2 class="mb-4"><%= @plant.name %></h2>
-      <p><strong>Botanical name: </strong><%= @plant.scientific_name %></p>
-      <p><strong>Category: </strong><%= @plant.category.name %></p>
-      <p><%= @plant.description %></p>
-      <h4>Instruction</h4>
-      <p><%= @plant.instruction %></p>
-      <p><button type="button" class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to garden</button> <span><%= link_to "Guides", guides_path(@guides), class: "btn btn-normal" %></span>  </p>
+<!-- Plant header 2 -->
+  <div class="plant-wrap">
+    <div class="plant-card">
+      <div class="plant-card-pic-wrap">
+        <%= cl_image_tag @plant.photo.key %>
+      </div>
+      <div class="plant-card-content">
+        <h3><%= @plant.name %></h3>
+        <p><strong>Botanical name: </strong><%= @plant.scientific_name %></p>
+        <p><strong>Category: </strong><%= @plant.category.name %></p>
+        <p><%= @plant.description %></p>
+        <a  class="btn btn-normal" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to my garden</a>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <h4 class="text-centred">Instruction</h4>
+    <p class="text-centred"><%= @plant.instruction %></p>
   </div>
 
   <!-- Conditions -->
@@ -38,23 +42,22 @@
   <!-- similar plants? -->
   <p class="section-title text-centred mt-5">Similar plants</p>
 
-   <div class="plant-cards">
+  <div class="contenedorCards">
     <% @plants.first(3).each do |plant| %>
       <div class="card">
         <%= link_to plant_path(plant) do %>
-
-          <% if plant.photo.attached? %>
-            <div class="img" style="background-image:url('<%= cl_image_path plant.photo.key %>')";></div>
-          <% else %>
-            <div class="img-none"><p>No Image</p></div>
-          <% end %>
-
-          <div class="text">
-            <p class='text-center'><strong><%= plant.name %></strong></p>
-            <p class='mb-1'><%= plant.scientific_name %></p>
-            <p>Origin: <%= plant.origin %></p>
+          <div class="wrapper">
+            <div class="colorProd"></div>
+            <div class="imgProd" style="background-image: url('<%= cl_image_path plant.photo.key %>');"></div>
+            <div class="infoProd">
+              <p class="nombreProd"><%= plant.name %></p>
+              <p class="extraInfo"><strong><%= plant.scientific_name %></strong></p>
+              <p class="extraInfo"><strong>Origin: <%= plant.origin %></strong></p>
+              <%# <div class="actions">
+                <a href="">Add to my garden</a>
+              </div> %>
+            </div>
           </div>
-
         <% end %>
       </div>
     <% end %>
@@ -77,9 +80,11 @@
     <div class="modal-content">
       <div class="modal-body">
       <%= simple_form_for @tag do |f| %>
-        <%= f.input :age, placeholder: "Weeks" ,label: 'The age of your plant', error: 'Age is mandatory, please specify' %>
-        <%= f.association :garden, collection: Garden.where(user: current_user), data:{placeholder: "Garden name"} %>
-        <%= f.input :location, placeholder: "outdoor, interior, etc..." ,label: 'The location of your plant', error: 'Location is mandatory, please specify' %>
+          <%= f.input :age, as: :date %>
+        <div class="d-flex justify-content-around">
+          <%= f.association :garden, prompt: "Please select a garden", collection: Garden.where(user: current_user) %>
+        <%= f.input :location, prompt:"Please set a location", collection: %w[Outdoor Indoor], error: 'Location is mandatory, please specify' %>
+        </div>
         <%= f.input :plant_id, as: "hidden", input_html: { value: @plant.id } %>
       <div class="d-flex justify-content-between">
        <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="width:50%">Cancel</button>

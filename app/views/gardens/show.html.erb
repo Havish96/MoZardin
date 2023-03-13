@@ -3,38 +3,15 @@
 <h1 class="title my-5">Plants in your garden</h1>
 
 <div class="container garden-container mb-5">
-  <div class="garden-card" onclick="this.classList.toggle('expanded')">
-    <p>Potatoes</p>
-    <!-- visible content -->
-    <img class="label" src="data:image/jpeg;base64,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" height="auto" width="200">
-    <!-- hidden content -->
-    <div class="text1">
-      <div class="garden-text-content">
-        <h3 class="garden-title">Daily</h3>
-        <div class="body-text">
-          <div>
-            <p><i class="fa-solid fa-cloud-sun fa-2x"></i></p>
-            <p><strong>6hrs</strong></p>
-          </div>
-          <div>
-            <p><i class="fa-solid fa-droplet fa-2x"></i></p>
-            <p><strong>5ml</strong></p>
-          </div>
-          <div>
-            <p><i class="fa-solid fa-temperature-high fa-2x"></i></p>
-            <p><strong>19 cel</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- bottom icon -->
-    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30"><path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5"/></svg>
-  </div>
+<% @tags.each do |tag| %>
+  <% plant_id = tag.plant_id %>
+  <% plant = Plant.find(plant_id) %>
+  <% @condition = Condition.where(plant_id: plant) %>
 
   <div class="garden-card" onclick="this.classList.toggle('expanded')">
-    <p>Red Oak Tree</p>
+    <p><%= plant.name %></p>
     <!-- visible content -->
-    <img class="label" src="https://lh3.googleusercontent.com/-5T-aWUXh0uk/V1lGPm-SGoI/AAAAAAAABPA/UYh9ep7bHgY/s640/PicsArt_06-01-11.24.05.png" height="auto" width="220">
+    <%= cl_image_tag plant.photo.key, height:150, class:"label" %>
     <!-- hidden content -->
     <div class="text1">
       <div class="garden-text-content">
@@ -42,52 +19,25 @@
         <div class="body-text">
           <div>
             <p><i class="fa-solid fa-cloud-sun fa-2x"></i></p>
-            <p><strong>6hrs</strong></p>
+            <p><strong><%= @condition.first.sun %></strong></p>
           </div>
           <div>
             <p><i class="fa-solid fa-droplet fa-2x"></i></p>
-            <p><strong>5ml</strong></p>
+            <p><strong><%= @condition.first.water %></strong></p>
           </div>
           <div>
             <p><i class="fa-solid fa-temperature-high fa-2x"></i></p>
-            <p><strong>19 cel</strong></p>
+            <p><strong><%= @condition.first.climate %></strong></p>
           </div>
         </div>
       </div>
     </div>
-    <!-- bottom icon -->
-    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30"><path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5"/></svg>
-  </div>
 
-  <div class="garden-card" onclick="this.classList.toggle('expanded')">
-    <p>Tomatoes</p>
-    <!-- visible content -->
-    <img class="label" src="https://purepng.com/public/uploads/large/two-red-tomatoes-7yt.png" height="auto" width="180">
-    <!-- hidden content -->
-    <div class="text1">
-      <div class="garden-text-content">
-        <h3 class="garden-title">Daily</h3>
-        <div class="body-text">
-          <div>
-            <p><i class="fa-solid fa-cloud-sun fa-2x"></i></p>
-            <p><strong>6hrs</strong></p>
-          </div>
-          <div>
-            <p><i class="fa-solid fa-droplet fa-2x"></i></p>
-            <p><strong>5ml</strong></p>
-          </div>
-          <div>
-            <p><i class="fa-solid fa-temperature-high fa-2x"></i></p>
-            <p><strong>19 cel</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- bottom icon -->
     <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="30"><path d="M5 30L50 5l45 25" fill="none" stroke="#000" stroke-width="5"/></svg>
   </div>
+<% end %>
 
 </div>
-
 
 <%= render "shared/footer" %>

@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 
-<h1 class="title my-5">Plants in your garden</h1>
+<h1 class="title my-5">Plants in <%= @garden.name %></h1>
 
 <div class="container garden-container mb-5">
 <% @tags.each do |tag| %>

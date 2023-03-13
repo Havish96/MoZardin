@@ -16,6 +16,9 @@ class GardensController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   def show
     @garden = Garden.find(params[:id])
     @tags = Tag.all.where(garden_id: @garden)

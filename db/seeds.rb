@@ -194,7 +194,7 @@ plant9 = Plant.new(name: 'Baobab',
                    instruction: 'These trees work well as accent plants for large gardens in warmer areas.' \
                                 ' Unfortunately, these trees are quite rare.')
 plant9.category = trees
-plant9_photo = URI.open('https://images.unsplash.com/photo-1558694440-03ade9215d7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+plant9_photo = URI.open('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8d701ac9-5f2f-46b0-bcd4-603768c2c88f/ddaexar-864a964e-c17e-4300-a6d6-77b68fcbe0db.png/v1/fill/w_800,h_579,strp/baobab_tree_png_4_by_gareng92_ddaexar-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc5IiwicGF0aCI6IlwvZlwvOGQ3MDFhYzktNWYyZi00NmIwLWJjZDQtNjAzNzY4YzJjODhmXC9kZGFleGFyLTg2NGE5NjRlLWMxN2UtNDMwMC1hNmQ2LTc3YjY4ZmNiZTBkYi5wbmciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kAw-3wG6uUgACfbHYWVbh4GUGNy6faEGkMOrSHhqJX4')
 plant9.photo.attach(io: plant9_photo, filename: "#{plant9.name}.png", content_type: "image/png")
 plant9.save
 cond9 = Condition.new(sun: '8 to 12 hours', water: 'Requires moderate/little watering', climate: '14˚C to 35˚C')
@@ -211,7 +211,7 @@ plant10 = Plant.new(name: 'Flamboyant',
                                  ' for a few days before you put them in cultivation soil. Keep them at a steady' \
                                  ' temperature of 68° F / 20°C. It will take three weeks until the seeds germinate.')
 plant10.category = trees
-plant10_photo = URI.open('https://images.unsplash.com/photo-1654343202834-cf6d0738c4dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2346&q=80')
+plant10_photo = URI.open('https://www.seekpng.com/png/full/989-9899063_flamboyant-trees-tree-red-flowers-nature-flame-tree.png')
 plant10.photo.attach(io: plant10_photo, filename: "#{plant10.name}.png", content_type: "image/png")
 plant10.save
 cond10 = Condition.new(sun: '8 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 30˚C')
@@ -229,7 +229,7 @@ plant11 = Plant.new(name: 'Pod Mahogany',
                                  ' trees with aggressive roots. Generally, plant them no closer than 20 feet from' \
                                  ' permanent structures and 5 to 6 feet from sidewalks and curbs.')
 plant11.category = trees
-plant11_photo = URI.open('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+plant11_photo = URI.open('https://www.featheredaddictions.com/assets/images/be716551-5e6e-4914-b2a6-8bfe2f5c029d_clipped_rev_1.png')
 plant11.photo.attach(io: plant11_photo, filename: "#{plant11.name}.png", content_type: "image/png")
 plant11.save
 cond11 = Condition.new(sun: '8 to 12 hours', water: 'Requires moderate/little watering', climate: '20˚C to 30˚C')
@@ -249,7 +249,7 @@ plant12 = Plant.new(name: 'Alexandra palm, king palm',
                                  ' center of the hole and fill it with a mixture of 50 percent sand and 50 percent' \
                                  ' original soil.')
 plant12.category = trees
-plant12_photo = URI.open('https://images.squarespace-cdn.com/content/v1/545cff12e4b04d921d5bbf37/1474556772761-11EVO9KISL1M9EGNRG9J/Archontophoenix+cunninghamiana.jpg?format=1500w')
+plant12_photo = URI.open('https://t4.ftcdn.net/jpg/05/45/43/21/360_F_545432118_g4tGW0iNZ0Idx7y4rP5Im9O40XiUjB6H.png')
 plant12.photo.attach(io: plant12_photo, filename: "#{plant12.name}.png", content_type: "image/png")
 plant12.save
 cond12 = Condition.new(sun: '3 to 6 hours', water: 'Requires regular watering', climate: '20˚C to 35˚C')
@@ -267,7 +267,7 @@ plant13 = Plant.new(name: 'Sweet Calamus',
                                  ' Use Acorus calamus "Variegatus" as an eye caching focus point in bog gardens or' \
                                  ' moist conditions. Sweet flag tolerates short periods of drought.')
 plant13.category = aquatic
-plant13_photo = URI.open('https://plantinfo.co.za/wp-content/uploads/2020/07/1373999282_sf-main.jpg')
+plant13_photo = URI.open('http://cdn.shopify.com/s/files/1/0245/3785/8100/products/vekhand-removebg-preview.png?v=1656400277')
 plant13.photo.attach(io: plant13_photo, filename: "#{plant13.name}.png", content_type: "image/png")
 plant13.save
 cond13 = Condition.new(sun: '6 to 12 hours', water: 'Requires regular watering', climate: '20˚C to 27˚C')
@@ -287,7 +287,7 @@ plant14 = Plant.new(name: 'Creeping lily turf',
                     ' soggy. Liriope grows best in partial shade but can tolerate full sun or full shade. Once' \
                     ' established, it is drought tolerant.')
 plant14.category = aquatic
-plant14_photo = URI.open('https://images.unsplash.com/photo-1658750103098-456ec308d183?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80')
+plant14_photo = URI.open('https://cdn.shopify.com/s/files/1/0557/1792/0934/products/Big-Blue-Liriope-Pot-500-removebg-preview_195x195@2x.png?v=1623995030')
 plant14.photo.attach(io: plant14_photo, filename: "#{plant14.name}.png", content_type: "image/png")
 plant14.save
 cond14 = Condition.new(sun: '8 to 10 hours', water: 'Requires regular watering', climate: '20˚C to 25˚C')

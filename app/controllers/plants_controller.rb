@@ -11,7 +11,7 @@ class PlantsController < ApplicationController
     elsif category.include?(params[:query])
       @plants = Plant.where(category: Category.find_by(name: params[:query]))
     else
-    @plants = Plant.all
+      @plants = Plant.all
     end
   end
 

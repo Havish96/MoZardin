@@ -17,25 +17,40 @@
   </div>
   <div class="container">
     <h4 class="text-centred">Instruction</h4>
-    <p class="text-centred"><%= @plant.instruction %></p>
+    <p class="text-centred my-5"><%= @plant.instruction %></p>
   </div>
 
   <!-- Conditions -->
-  <div class="condition my-5">
+  <%# <div class="condition my-5">
     <div class="condition-card">
       <i class="fa-solid fa-cloud-sun icon mb-4"></i>
-      <p class="mb-2">Sunlight Exposure</p>
-      <p><%= @condition.sun %></p>
-    </div>
-    <div class="condition-card mb-4">
+      <p class="mb-2">Sunlight Exposure</p> %>
+      <%#= @condition.sun %>
+    <%# </div> %>
+    <%# <div class="condition-card mb-4">
       <i class="fa-solid fa-water icon mb-4"></i>
-      <p class="mb-2">Water</p>
-      <p><%= @condition.water %></p>
-    </div>
+      <p class="mb-2">Water</p> %>
+      <%#= @condition.water %>
+    <%# </div>
     <div class="condition-card mb-4">
       <i class="fa-solid fa-temperature-quarter icon mb-4"></i>
-      <p class="mb-2">Temperature</p>
-      <p><%= @condition.climate %></p>
+      <p class="mb-2">Temperature</p> %>
+      <%#= @condition.climate %>
+    <%# </div>
+  </div> %>
+
+  <div class="condition-container">
+    <div class="conditions-card">
+      <i class="fa-solid fa-cloud-sun icon mb-4"></i>
+      <%= @condition.sun %>
+    </div>
+    <div class="conditions-card">
+      <i class="fa-solid fa-water icon mb-4"></i>
+      <%= @condition.water %>
+    </div>
+    <div class="conditions-card">
+      <i class="fa-solid fa-temperature-quarter icon mb-4"></i>
+      <%= @condition.climate %>
     </div>
   </div>
 

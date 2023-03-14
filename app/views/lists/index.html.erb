@@ -1,49 +1,47 @@
 <%= render 'shared/navbar' %>
 <h1 class="title">To-do List</h1>
 
-<div class="container my-5">
-  <div class="tasks-list-container">
-    <p>Today's Tasks</p>
+<% percentage = (@tasks.all.where(done: true).count.to_f/@tasks.all.count.to_f) * 100 %>
 
-    <% @lists.each do |list| %>
+<div class="progress" style="width: 1000px; margin:0 auto;">
+  <div class="progress-bar" role="progressbar" style="width: <%= percentage %>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= percentage.to_i %>%</div>
+</div>
+<div class="tasks-list-container container my-5">
+  <% @tasks.each_with_index do |task, index| %>
+
+
+    <% if task.done %>
       <div class="task">
-        <div class="check-box"></div>
-        <%= list.name %>
+        <div class="check-box-done" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <p class='name'><%= task.name %></p>
+        <!--<p>Task completed on <%#= (task.updated_at + 4.hours).strftime("%a %b %e at %l:%M %p") %></p>-->
+      </div>
+    <% else %>
+      <div class="task">
+        <div class="check-box" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>></div>
+        <p class='name'><%= task.name %></p>
       </div>
     <% end %>
-  </div>
 
-  <div class="container">
-    <% @tasks.each_with_index do |task, index| %>
-      <li>
-        <h2 class='mt-5'><%= task.name %></h2>
-        <p><%= task.description %></p>
-        <% if task.done %>
-          <p>Comment: <%= task.comment %></p>
-          <p>Task completed on <%= (task.updated_at + 4.hours).strftime("%a %b %e at %l:%M %p") %></p>
-        <% else %>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>Mark as done</button>
-        <% end %>
-
-        <div class="modal fade" id=<%= "exampleModal#{index}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><strong><%= task.name %></strong> - <%= task.description %></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <%= simple_form_for(task) do |f| %>
-                  <%= f.input :comment, placeholder: 'Enter your comments here' %>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <%= f.button :submit, 'Save changes', class: 'btn btn-primary' %>
-                <% end %>
-              </div>
-            </div>
+    <div class="modal fade" id=<%= "exampleModal#{index}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><strong><%= task.name %></strong> - <%= task.description %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(task) do |f| %>
+              <%= f.input :comment, placeholder: 'Enter your comments here' %>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <%= f.button :submit, 'Save changes', class: 'btn btn-primary' %>
+            <% end %>
           </div>
         </div>
-      </li>
-    <% end %>
-  </div>
+      </div>
+    </div>
 
+  <% end %>
 </div>

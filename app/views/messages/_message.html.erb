@@ -7,7 +7,7 @@
       <div class="message-box">
         <p class="right-msg"><%= message.content %></p>
       </div>
-      <p class="right-timer"><%= message.created_at.strftime("%l:%M %p") %></p>
+      <p class="right-timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
         <%= cl_image_tag message.user.photo.key, class:"avatar" %>
         <p><%= message.content %></p>
       </div>
-      <p class="left-timer"><%= message.created_at.strftime("%l:%M %p") %></p>
+      <p class="left-timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
     </div>
   </div>
 

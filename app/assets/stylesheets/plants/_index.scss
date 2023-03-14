@@ -11,10 +11,26 @@
 
 // ------------------------ Category Cards --------------------------------
 
+// ----------------------------------------------- Scroolbar ---------------------------------------------------------
+/* width */
+.category-cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+.category-cards::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+/* Handle */
+.category-cards::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
 .category-cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x:scroll;
+  white-space: nowrap;
 
   .card {
     height: 150px;

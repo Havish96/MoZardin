@@ -15,7 +15,7 @@
   <div class="category-cards">
 
   <%= link_to 'plants?query=Fruits+%26+Vegetables', controller: 'plants', action: 'index', query: 'Fruits & Vegetables' do %>
-    <div class="card">
+    <div class="card first">
       <p>Fruits & Vegetables</p>
     </div>
   <% end %>
@@ -37,7 +37,13 @@
       <p>Trees</p>
     </div>
   <% end %>
-  </div>
+
+  <%= link_to 'plants?query=Aloes', controller: 'plants', action: 'index', query: 'Aloes' do %>
+    <div class="card" style="background-image: url(https://images.unsplash.com/photo-1568115438880-31f50e299742?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <p>Aloes</p>
+    </div>
+  <% end %>
+</div>
 
   <p class="mt-4 text-centred">All plants in library</p>
 

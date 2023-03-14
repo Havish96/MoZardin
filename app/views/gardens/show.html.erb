@@ -1,6 +1,16 @@
 <%= render "shared/navbar" %>
-
 <h1 class="title my-5">Plants in <%= @garden.name %></h1>
+<div data-controller="weather">
+  <div class ="weather_card">
+    <h2><strong>Weather</strong></h2>
+    <h3><span data-weather-target="address"> <!-- TODO: CITY NAME --> </span></h3>
+    <h4 class="text-secondary" data-weather-target="date"><!-- TODO: DATE --></h4>
+    <h5 class="tempature-style" data-weather-target="temperature"><!-- TODO: DESCRIPTION --></h5>
+    <h6 class="time_location"  data-weather-target="time_location"> </h6>
+
+  </div>
+</div>
+
 
 <div class="container garden-container mb-5">
   <% @tags.each do |tag| %>

@@ -1,21 +1,31 @@
 <%= render 'shared/navbar' %>
 <h1 class="title">To-do List</h1>
 
+<!-- Progress bar -->
+
 <% percentage = (@tasks.all.where(done: true).count.to_f/@tasks.all.count.to_f) * 100 %>
 
-<div class="progress" style="width: 1000px; margin:0 auto;">
-  <div class="progress-bar" role="progressbar" style="width: <%= percentage %>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= percentage.to_i %>%</div>
+<div class="container">
+  <div class="progress" style="max-width: 1000px; margin:0 auto;">
+    <div class="progress-bar" role="progressbar" style="width: <%= percentage %>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= percentage.to_i %>%</div>
+  </div>
 </div>
+
+<!-- Tasks -->
+
 <div class="tasks-list-container container my-5">
   <% @tasks.each_with_index do |task, index| %>
 
 
     <% if task.done %>
       <div class="task">
+        <% plant_id = task.plant_id %>
+        <%= cl_image_tag Plant.find(plant_id).photo.key, width:100 %>
         <div class="check-box-done" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
           <i class="fa-solid fa-check"></i>
         </div>
         <p class='name'><%= task.name %></p>
+          <%= time_ago_in_words(task.updated_at) %> ago.
         <!--<p>Task completed on <%#= (task.updated_at + 4.hours).strftime("%a %b %e at %l:%M %p") %></p>-->
       </div>
     <% else %>

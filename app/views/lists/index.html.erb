@@ -81,7 +81,7 @@
   <div class="list-container">
     <% @list.each do |list| %>
       <div class="card mb-4">
-        <%= link_to list.name %>
+        <%= link_to list.name, class: "list-link" %>
       </div>
     <% end %>
   </div>

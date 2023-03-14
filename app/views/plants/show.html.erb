@@ -3,7 +3,7 @@
 <% content_for :meta_image, cl_image_path(@plant.photo.key) if @plant.photo.attached? %>
 
 <%= render 'shared/navbar' %>
-
+<div data-controller="weather"> </div>
 <!-- Plant header 2 -->
   <div class="plant-wrap">
     <div class="plant-card">

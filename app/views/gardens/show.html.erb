@@ -1,26 +1,10 @@
 <%= render "shared/navbar" %>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header modal-header">
-      <%= simple_form_for @garden do |f| %>
-        <%= f.input :name %>
-        <%= f.submit "Save", class:"btn btn-normal", style:"width:50%" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div class = "div_btn_de-edi">
+  <%= link_to garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn_edit_delete" do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
 </div>
-
-
-<%= link_to "Delete", garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
 <h1 class="title my-5">Plants in <%= @garden.name %></h1>
 <div data-controller="weather">
@@ -71,5 +55,4 @@
     </div>
   <% end %>
 </div>
-
 <%= render "shared/footer" %>

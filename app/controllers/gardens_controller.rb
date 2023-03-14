@@ -1,6 +1,6 @@
 class GardensController < ApplicationController
   def index
-    @gardens = Garden.all
+    @gardens = Garden.where(user_id: current_user.id)
     @garden = Garden.new
   end
 

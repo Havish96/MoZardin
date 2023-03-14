@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :gardens, dependent: :destroy
   has_many :lists, dependent: :destroy
 
-  after_save :create_default_garden
+  after_create :create_default_garden
 
   private
 

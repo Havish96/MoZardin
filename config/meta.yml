@@ -1,0 +1,5 @@
+meta_product_name: "MoZardin"
+meta_title: "MoZardin - Your digital guide to a perfect garden."
+meta_description: "Taking care of your garden in a more efficient and effective manner has never been more easy. is a user-friendly and helpful platform that can help people take care of their gardens more effectively. It combines personalized garden care plans, task reminders, plant database, community forum, weather updates, and integration with smart devices to provide a comprehensive gardening experience."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

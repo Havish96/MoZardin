@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    puts Task.weather_today
+    TasksController.generate_tasks(current_user)
   end
 
   # DELETE /resource/sign_out

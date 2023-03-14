@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
@@ -12,10 +15,25 @@ class TasksController < ApplicationController
     end
   end
 
-  def weather_today
-    url = "http://api.weatherapi.com/v1/current.json?key=bb8ae13d2adc43af89651804231303&q=#{current_user.city},Mauritius"
+  def self.weather_today(user)
+    url = "http://api.weatherapi.com/v1/current.json?key=bb8ae13d2adc43af89651804231303&q=#{user.city},Mauritius"
     user_serialized = URI.open(url).read
     JSON.parse(user_serialized)
+  end
+
+  def self.generate_tasks(user)
+    weather = weather_today(user)
+
+    user.gardens.each do |garden|
+      garden.plants do |plant|
+        if weather["current"]["precip_mm"] <= 20
+          Task.create(name: plant.name,
+                      description: 'Please water your plant [NO RAIN TODAY]',
+                      done: false,
+                      plant_id: plant.id)
+        end
+      end
+    end
   end
 
   private

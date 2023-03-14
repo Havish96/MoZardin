@@ -11,47 +11,79 @@
   </div>
 </div>
 
-<!-- Tasks -->
+<div class="container-task-list">
+  <!-- Tasks -->
 
-<div class="tasks-list-container container my-5">
-  <% @tasks.each_with_index do |task, index| %>
+  <div class="tasks-list-container my-5">
+    <% @tasks.each_with_index do |task, index| %>
 
 
-    <% if task.done %>
-      <div class="task">
-        <% plant_id = task.plant_id %>
-        <%= cl_image_tag Plant.find(plant_id).photo.key, width:100 %>
-        <div class="check-box-done" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
-          <i class="fa-solid fa-check"></i>
+      <% if task.done %>
+        <div class="task">
+          <% plant_id = task.plant_id %>
+          <%= cl_image_tag Plant.find(plant_id).photo.key, width:100 %>
+
+          <div class="check-box-done" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="text">
+            <p class='name'><%= task.name %></p>
+            <p class='description'><%= task.description %></p>
+            <p class='comment'><%= task.comment %></p>
+            <p class='time'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</p>
+          </div>
         </div>
-        <p class='name'><%= task.name %></p>
-          <%= time_ago_in_words(task.updated_at) %> ago.
         <!--<p>Task completed on <%#= (task.updated_at + 4.hours).strftime("%a %b %e at %l:%M %p") %></p>-->
+
+      <% else %>
+
+        <div class="task">
+          <% plant_id = task.plant_id %>
+          <%= cl_image_tag Plant.find(plant_id).photo.key, width:100 %>
+
+          <div class="check-box" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>></div>
+
+          <div class="text">
+            <p class='name'><%= task.name %></p>
+            <p class='description'><%= task.description %></p>
+            <p class='comment'><%= task.comment %></p>
+            <p class='time'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</p>
+          </div>
+        </div>
+
+      <% end %>
+
+      <!-- Modal -->
+
+      <div class="modal fade" id=<%= "exampleModal#{index}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><strong><%= task.name %></strong> - <%= task.description %></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for(task) do |f| %>
+                <%= f.input :comment, placeholder: 'Enter your comments here' %>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <%= f.button :submit, 'Save changes', class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-    <% else %>
-      <div class="task">
-        <div class="check-box" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>></div>
-        <p class='name'><%= task.name %></p>
+
+    <% end %>
+  </div>
+
+  <!-- Lists -->
+
+  <div class="list-container">
+    <% @list.each do |list| %>
+      <div class="card mb-4">
+        <%= link_to list.name %>
       </div>
     <% end %>
+  </div>
 
-    <div class="modal fade" id=<%= "exampleModal#{index}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><strong><%= task.name %></strong> - <%= task.description %></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for(task) do |f| %>
-              <%= f.input :comment, placeholder: 'Enter your comments here' %>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <%= f.button :submit, 'Save changes', class: 'btn btn-primary' %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <% end %>
 </div>

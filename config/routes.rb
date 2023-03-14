@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "plants#home"
 
   resources :plants
-  resources :gardens, only: %i[create show index new]
+  resources :gardens
   resources :guides, only: %i[index show]
   resources :tags, only: %i[create destroy]
   resources :lists, only: :index

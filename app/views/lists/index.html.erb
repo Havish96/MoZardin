@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 
 <div class="container">
-  <% @tasks.each do |task| %>
+  <% @tasks.each_with_index do |task, index| %>
     <li>
       <h2 class='mt-5'><%= task.name %></h2>
       <p><%= task.description %></p>
@@ -9,10 +9,10 @@
         <p>Comment: <%= task.comment %></p>
         <p>Task completed on <%= (task.updated_at + 4.hours).strftime("%a %b %e at %l:%M %p") %></p>
       <% else %>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Mark as done</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>Mark as done</button>
       <% end %>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id=<%= "exampleModal#{index}"%> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -21,7 +21,7 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for(task) do |f| %>
-                <%= f.input :comment, inline_label: 'Enter your comments here' %>
+                <%= f.input :comment, placeholder: 'Enter your comments here' %>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <%= f.button :submit, 'Save changes', class: 'btn btn-primary' %>
               <% end %>

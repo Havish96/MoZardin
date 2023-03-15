@@ -22,20 +22,19 @@ class TasksController < ApplicationController
   end
 
   def self.generate_tasks(user)
-    weather = weather_today(user)
+    puts weather_today(user)
     if user.lists.count.zero?
       list = List.create!(name: user.nickname, user_id: user.id)
+    else
+      list = List.find_by(user_id: user.id)
     end
 
     user.gardens.each do |garden|
       garden.plants do |plant|
-        if weather["current"]["precip_mm"] <= 20
-          Task.create!(name: plant.name,
-                       description: 'Please water your plant [NO RAIN TODAY]',
-                       done: false,
-                       plant_id: plant.id,
-                       list_id: list.id)
-        end
+        new_task = Task.new(name: plant.name, description: 'Please water your plant [NO RAIN TODAY]', done: false,
+                            plant_id: plant.id,
+                            list_id: list.id)
+        new_task.save
       end
     end
   end

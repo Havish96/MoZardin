@@ -97,13 +97,17 @@
 
 .article-container {
   position: relative;
-  margin-top: 250px;
+  padding: 100px;
+  margin: 100px auto;
 }
 
 .widget {
+  position: absolute;
 	font-size: 18px;
 	height: 300px;
 	width: 400px;
+  top: 50%;
+  left: 50%;
 	transform: translate(-50%, -50%);
   h1, h2, h3, h4, h5 {
     font-weight: normal;
@@ -113,7 +117,7 @@
 }
 
 .weatherIcon{
-	background-color: #f0f8fa;
+	background-color: #6dd4f6;
 	height: 70%;
 	width: 100%;
 	position: relative;
@@ -165,9 +169,7 @@
   }
 }
 
-
-
-.date {
+.article-container .date {
 	background-color: #4dbde2;
 	height: 30%;
 	width: 22%;
@@ -221,7 +223,7 @@
 
 	 }
 
-	.white {fill:grey}
+	.white {fill:white}
 	.gray {fill:#E0E0E0}
 	.yellow {fill:#FFEB3B}
  }

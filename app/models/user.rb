@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :photo
-  after_save :create_default_garden
+  has_many :messages, dependent: :destroy
+  has_many :gardens, dependent: :destroy
+  has_many :lists, dependent: :destroy
+
+  after_create :create_default_garden
 
   private
 

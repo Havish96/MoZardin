@@ -24,10 +24,12 @@ export default class extends Controller {
     this.temperatureTarget.innerText = `${Math.round(data.current.temp_c)} °C`
     this.addressTarget.innerText = data.location.region
     // const today = new Date();
-    // const localOffset = data.timezone + today.getTimezoneOffset() * 60
+
+    //const localOffset = data.timezone + today.getTimezoneOffset() * 60
     // const localDate = new Date(today.setUTCSeconds(localOffset))
     // const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
     // const formattedDate = localDate.toLocaleDateString("en-US", options)
-    this.dateTarget.innerText = data.location.localtime
+    this.dateTarget.innerText = data.condition
+
   }
 }

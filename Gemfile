@@ -80,3 +80,4 @@ end
 gem "cloudinary"
 gem "faker"
 gem "pg_search"
+gem 'redis', '~> 5.0', '>= 5.0.6'

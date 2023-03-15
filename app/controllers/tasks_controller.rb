@@ -31,10 +31,10 @@ class TasksController < ApplicationController
       garden.plants do |plant|
         if weather["current"]["precip_mm"] <= 20
           Task.create!(name: plant.name,
-                      description: 'Please water your plant [NO RAIN TODAY]',
-                      done: false,
-                      plant_id: plant.id,
-                      list_id: list.id)
+                       description: 'Please water your plant [NO RAIN TODAY]',
+                       done: false,
+                       plant_id: plant.id,
+                       list_id: list.id)
         end
       end
     end

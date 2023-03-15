@@ -10,31 +10,31 @@
 
   <% @gardens.each do |garden| %>
    <!-- Button trigger modal -->
-  <button type="button" class = "btn_edit_delete" data-bs-toggle="modal" data-bs-target="#exampleModal<%= garden.id %>">
-    <i class="fa-solid fa-pen"></i>
-  </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal<%= garden.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-      <%= simple_form_for(@garden, method: :patch, url: garden_path(garden)) do |f| %>
-        <div class="d-flex justify-content-between">
-          <%= f.input :name, label: false, placeholder: "Rename your garden" %>
-          <%= f.submit "Save", class:"btn btn-normal_save" %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal<%= garden.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+        <%= simple_form_for(@garden, method: :patch, url: garden_path(garden)) do |f| %>
+          <div class="d-flex justify-content-between">
+            <%= f.input :name, label: false, placeholder: "Rename your garden" %>
+            <%= f.submit "Save", class:"btn btn-normal_save" %>
+          </div>
+        <% end %>
         </div>
-      <% end %>
       </div>
     </div>
   </div>
-</div>
 
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FyZGVufGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60)">
     <%= link_to garden_path(garden) do  %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FyZGVufGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60)">
-        <%= garden.name %>
-      </div>
+      <p style="margin: 0; color: white;"><%= garden.name %></p>
     <% end %>
+    <button type="button" class = "btn_edit" data-bs-toggle="modal" data-bs-target="#exampleModal<%= garden.id %>">
+      <i class="fa-regular fa-pen-to-square"></i>
+    </button>
+  </div>
   <% end %>
 
   <h4 class="text-centred my-5">Create new garden</h4>
@@ -42,7 +42,7 @@
   <%= simple_form_for(@garden) do |f| %>
     <%= f.input :name, placeholder: "e.g Garden 1", label: false %>
 
-    <div class="inline-form">
+    <div class="inline-form mt-4">
       <%= f.submit "Create garden", class:"btn btn-primary text-justify" %>
     </div>
   <% end %>

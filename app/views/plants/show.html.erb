@@ -8,7 +8,11 @@
   <div class="plant-wrap">
     <div class="plant-card">
       <div class="plant-card-pic-wrap">
+      <% if @plant.photo.key.nil? %>
+        <p>no image</p>
+      <% else %>
         <%= cl_image_tag @plant.photo.key %>
+      <% end %>
       </div>
       <div class="plant-card-content">
         <h3><%= @plant.name %></h3>
@@ -67,7 +71,11 @@
         <%= link_to plant_path(plant) do %>
           <div class="wrapper">
             <div class="colorProd"></div>
-            <div class="imgProd" style="background-image: url('<%= cl_image_path plant.photo.key %>');"></div>
+            <% if plant.photo.key.nil? %>
+              <p>no image</p>
+            <% else %>
+              <div class="imgProd" style="background-image: url('<%= cl_image_path plant.photo.key %>');"></div>
+            <% end %>
             <div class="infoProd">
               <p class="nombreProd"><%= plant.name %></p>
               <p class="extraInfo"><strong><%= plant.scientific_name %></strong></p>

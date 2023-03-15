@@ -38,13 +38,13 @@ aquatic = Category.create(name: 'Water & Aquatic',
                                        " submergent, or floating.")
 
 
-Climbers= Category.create(name: 'Climbers $ Creepers Shrubs',
-                          description: 'This is a very popular ornamental tree in subtropical and tropical climates,'\
-                                       'grown for its scented flowers and also used as a food item in Indian cuisine.')
+climbers = Category.create(name: 'Climbers & Creepers Shrubs',
+                          description: "This is a very popular ornamental tree in subtropical and tropical climates,"\
+                                       "grown for its scented flowers and also used as a food item in Indian cuisine.")
 
 
 
-puts "Creating 17 plants ..."
+puts "Creating 20 plants ..."
 
 # Category - Fruits & Vegetables
 plant1 = Plant.new(name: 'Tomato',
@@ -351,13 +351,79 @@ plant17= Plant.new(name:'orchid-tree',
                                 'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
                                 ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
 
-plant17.category= Climbers
-plant17_photo= URI.open('https://plantinfo.co.za/wp-content/uploads/2020/07/1394438241_bauhinia-species-main.jpg')
+plant17.category= climbers
+plant17_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant17.photo.attach(io: plant17_photo, filename: "#{plant17.name}.png", content_type: "image/png")
 plant17.save
-cond17 = Condition.new(sun: '8-12hrs', water: 'Aquatic', climate: '15-25˚C')
+cond17 = Condition.new(sun: '8-12hrs', water: 'Regular', climate: '15-25˚C')
 cond17.plant = plant17
 cond17.save
 puts "created orchid-tree"
+
+plant18= Plant.new(name:'Calico Flower',
+  description: 'Native to South America, Calico flower is a tender evergreen vine with very unusual flowers. Leaves are beautiful, bright green heart shaped. '\
+               'These are about 3 in long by 2 in wide and grow closely together to create a dense mass of foliage.'\
+               ' Bright green leaves are usually evergreen and the vining stems become quite woody with age. Flowers are solitary and quite large, for a pipevine',
+
+
+  scientific_name: 'Aristolochia Littoralis', origin: 'Brazil',
+  instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+               'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+               ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+
+plant18.category= climbers
+plant18_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant18.photo.attach(io: plant18_photo, filename: "#{plant18.name}.png", content_type: "image/png")
+plant18.save
+cond18 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')
+cond18.plant = plant18
+cond18.save
+puts "created calico flower"
+
+plant19= Plant.new(name:'Magial',
+  description: 'Native to South America, Calico flower is a tender evergreen vine with very unusual flowers. Leaves are beautiful, bright green heart shaped. '\
+               'These are about 3 in long by 2 in wide and grow closely together to create a dense mass of foliage.'\
+               ' Bright green leaves are usually evergreen and the vining stems become quite woody with age. Flowers are solitary and quite large, for a pipevine',
+
+
+  scientific_name: 'Aristolochia Littoralis', origin: 'Brazil',
+  instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+               'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+               ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+
+plant19.category= climbers
+plant19_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant19.photo.attach(io: plant19_photo, filename: "#{plant19.name}.png", content_type: "image/png")
+plant19.save
+cond19 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')
+cond19.plant = plant19
+cond19.save
+puts "created margial"
+
+plant20= Plant.new(name:'potoui',
+  description: 'Native to South America, Calico flower is a tender evergreen vine with very unusual flowers. Leaves are beautiful, bright green heart shaped. '\
+               'These are about 3 in long by 2 in wide and grow closely together to create a dense mass of foliage.'\
+               ' Bright green leaves are usually evergreen and the vining stems become quite woody with age. Flowers are solitary and quite large, for a pipevine',
+
+
+  scientific_name: 'Aristolochia Littoralis', origin: 'Brazil',
+  instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+               'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+               ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+
+plant20.category= climbers
+plant20_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant20.photo.attach(io: plant20_photo, filename: "#{plant20.name}.png", content_type: "image/png")
+plant20.save
+cond20 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')
+cond20.plant = plant20
+cond20.save
+puts "created patoui"
+
+
 
 
 # Guides

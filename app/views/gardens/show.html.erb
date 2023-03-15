@@ -67,7 +67,7 @@
             <circle id="XMLID_19_" class="gray" cx="46.7" cy="13.4" r="10.7"/>
             <animateTransform attributeName="transform"
                               attributeType="XML"
-                              dur="6s"
+                              dur="9s"
                               keyTimes="0;0.5;1"
                               repeatCount="indefinite"
                               type="translate"
@@ -79,9 +79,9 @@
       </div>
     </div>
     <div class="weatherData">
-      <h1 class="temperature">25&deg;</h1>
-      <h2 class="description">Partly Cloudy</h2>
-      <h3 class="city">Black River</h3>
+      <h1 class="temperature-style" data-weather-target="temperature"></h1>
+      <h2 class="time-do" data-weather-target="time"></h2>
+      <h3 class="address-location"data-weather-target="address" ></h3>
     </div>
     <div class="date">
       <h4 class="month" id="month"><%= Date::MONTHNAMES[Time.now.month] %></h4>

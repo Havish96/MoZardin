@@ -11,7 +11,21 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    TasksController.generate_tasks(current_user)
+    if current_user.lists.count.zero?
+      list = List.create!(name: current_user.nickname, user_id: user.id)
+    else
+      list = List.find_by(user_id: current_user.id)
+    end
+
+    current_user.gardens.each do |garden|
+      garden.plants do |plant|
+        new_task = Task.new(name: plant.name, description: 'Please water your plant [NO RAIN TODAY]', done: false,
+                            plant_id: plant.id,
+                            list_id: list.id)
+        new_task.save
+      end
+    end
+    # TasksController.generate_tasks(current_user)
   end
 
   # DELETE /resource/sign_out

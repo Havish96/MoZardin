@@ -342,7 +342,12 @@ Guide.create(title: "How to plant grass seed",
              description: sample_document,
              date: "September 18, 2019",
              author: "Bertram Perry",
-             image_url: "https://nualgiponds.com/wp-content/uploads/2014/04/water-garden-residential-pond-1080x745.jpg"
-)
+             image_url: "https://nualgiponds.com/wp-content/uploads/2014/04/water-garden-residential-pond-1080x745.jpg")
+
+# Chatrooms
+Chatroom.destroy_all
+puts "Creating Chatrooms"
+Chatroom.create(name: "General")
+Chatroom.create(name: "Help")
 
 puts "Done!"

@@ -10,19 +10,21 @@
 
   <% @gardens.each do |garden| %>
    <!-- Button trigger modal -->
-  <button type="button" class = "btn_edit_delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" class = "btn_edit_delete" data-bs-toggle="modal" data-bs-target="#exampleModal<%= garden.id %>">
     <i class="fa-solid fa-pen"></i>
   </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="exampleModal<%= garden.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
-      <div class="modal-header modal-header">
-      <%= simple_form_for @garden do |f| %>
-        <%= f.input :name %>
-        <%= f.submit "Save", class:"btn btn-normal", style:"width:50%" %>
-        <% end %>
+      <div class="modal-header">
+      <%= simple_form_for(@garden, method: :patch, url: garden_path(garden)) do |f| %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :name, label: false, placeholder: "Rename your garden" %>
+          <%= f.submit "Save", class:"btn btn-normal_save" %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>

@@ -49,17 +49,17 @@ class TasksController < ApplicationController
             new_task.save
           end
         else
-          if weather['current']['precip_mm'] < 40 && Condition.find_by(plant_id: plant.id).water == 'Aquatic'
+          if weather['current']['precip_mm'] < 30 && Condition.find_by(plant_id: plant.id).water == 'Aquatic'
             new_task = Task.new(name: plant.name, description: 'Maintain water level below the plant\'s flower',
                                 done: false,
                                 plant_id: plant.id,
                                 list_id: list.id)
-          elsif weather['current']['precip_mm'] < 40 && Condition.find_by(plant_id: plant.id).water == 'Regular'
+          elsif weather['current']['precip_mm'] < 30 && Condition.find_by(plant_id: plant.id).water == 'Regular'
             new_task = Task.new(name: plant.name, description: 'Please water your plant [NO RAIN IN YOUR AREA TODAY]',
                                 done: false,
                                 plant_id: plant.id,
                                 list_id: list.id)
-          elsif weather['current']['precip_mm'] >= 40 && Condition.find_by(plant_id: plant.id).water == 'Regular'
+          elsif weather['current']['precip_mm'] > 30 && Condition.find_by(plant_id: plant.id).water == 'Regular'
             new_task = Task.new(name: plant.name,
                                 description: "Precipation amount: #{weather['current']['precip_mm']} mm. " \
                                              "No need to water your plant.",

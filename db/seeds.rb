@@ -38,7 +38,13 @@ aquatic = Category.create(name: 'Water & Aquatic',
                                        " submergent, or floating.")
 
 
-puts "Creating 16 plants ..."
+Climbers= Category.create(name: 'Climbers $ Creepers Shrubs',
+                          description: 'This is a very popular ornamental tree in subtropical and tropical climates,'\
+                                       'grown for its scented flowers and also used as a food item in Indian cuisine.')
+
+
+
+puts "Creating 17 plants ..."
 
 # Category - Fruits & Vegetables
 plant1 = Plant.new(name: 'Tomato',
@@ -333,6 +339,26 @@ cond16 = Condition.new(sun: '8-12hrs', water: 'Aquatic', climate: '20-35˚C')
 cond16.plant = plant16
 cond16.save
 puts "created Lotus"
+
+plant17= Plant.new(name:'orchid-tree',
+                   description: 'This species bears compound foliage consisting of only 2 broad leaflets and flowers '\
+                                'have 5 petals and are in shades of red, pink, purple, orange, or yellow, and are often fragrant.'\
+                                ' It is often slow growing and do not like being transplanted. '\
+                                'They prefer acidic soils, and full sun but can be grown in partial sun.',
+
+                   scientific_name: 'Bauhina variegata', origin: ' Southeast Asia',
+                   instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+                                'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+                                ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+plant17.category= Climbers
+plant17_photo= URI.open('https://plantinfo.co.za/wp-content/uploads/2020/07/1394438241_bauhinia-species-main.jpg')
+plant17.save
+cond17 = Condition.new(sun: '8-12hrs', water: 'Aquatic', climate: '15-25˚C')
+cond17.plant = plant17
+cond17.save
+puts "created orchid-tree"
+
 
 # Guides
 Guide.destroy_all

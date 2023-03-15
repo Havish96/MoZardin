@@ -2,16 +2,37 @@
 
 <% if @gardens.nil? == true %>
     <h1 class="title mt-5">Create a new garden</h1>
-  <% else %>
+<% else %>
     <h1 class="title mt-5">Your gardens</h1>
 <% end %>
 
 <div class="container my-5">
 
   <% @gardens.each do |garden| %>
+   <!-- Button trigger modal -->
+  <button type="button" class = "btn_edit_delete" data-bs-toggle="modal" data-bs-target="#exampleModal<%= garden.id %>">
+    <i class="fa-solid fa-pen"></i>
+  </button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<%= garden.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+      <%= simple_form_for(@garden, method: :patch, url: garden_path(garden)) do |f| %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :name, label: false, placeholder: "Rename your garden" %>
+          <%= f.submit "Save", class:"btn btn-normal_save" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
     <%= link_to garden_path(garden) do  %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FyZGVufGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60)">
-      <%= garden.name %>
+        <%= garden.name %>
       </div>
     <% end %>
   <% end %>

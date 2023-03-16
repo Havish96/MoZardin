@@ -19,6 +19,7 @@ class GardensController < ApplicationController
   def show
     @garden = Garden.find(params[:id])
     @tags = Tag.all.where(garden_id: @garden)
+    @address = current_user.city
   end
 
   def destroy

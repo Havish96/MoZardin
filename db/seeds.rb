@@ -17,18 +17,27 @@ fruits = Category.create(name: "Fruits & Vegetables",
                                       " the plant they come from. A fruit develops from the flower of a plant, while" \
                                       " other parts of the plant are categorized as vegetables. Fruits contain seeds," \
                                       " while vegetables can consist of roots, stems and leaves.")
+fruits_photo = URI.open('https://images.unsplash.com/photo-1445282768818-728615cc910a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+fruits.photo.attach(io: fruits_photo, filename: "#{fruits.name}.png", content_type: "image/png")
+fruits.save
 
 herbs = Category.create(name: 'Herbs',
                         description: "In general use, herbs are a widely distributed and widespread group of plants," \
                                      " excluding vegetables and other plants consumed for macronutrients, with savory" \
                                      " or aromatic properties that are used for flavoring and garnishing food, for" \
                                      " medicinal purposes, or for fragrances.")
+herbs_photo = URI.open('https://images.unsplash.com/photo-1532092367580-3bd5bc78dd9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+herbs.photo.attach(io: herbs_photo, filename: "#{herbs.name}.png", content_type: "image/png")
+herbs.save
 
 trees = Category.create(name: 'Trees',
                         description: "A tree is a tall plant that can live for a very long time. It has a single stem" \
                                      " or trunk and branches that support leaves. Beneath the ground, a tree has a" \
                                      " root system that acts as an anchor and stores the water and nutrients the plant" \
                                      " needs to grow.")
+trees_photo = URI.open('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80')
+trees.photo.attach(io: trees_photo, filename: "#{trees.name}.png", content_type: "image/png")
+trees.save
 
 aquatic = Category.create(name: 'Water & Aquatic',
                           description: "Aquatic plants are plants that have adapted to living in aquatic environments" \
@@ -36,7 +45,9 @@ aquatic = Category.create(name: 'Water & Aquatic',
                                        " macrophytes to distinguish them from algae and other microphytes. A" \
                                        " macrophyte is a plant that grows in or near water and is either emergent," \
                                        " submergent, or floating.")
-
+aquatic_photo = URI.open('https://images.unsplash.com/photo-1490772888775-55fceea286b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+aquatic.photo.attach(io: aquatic_photo, filename: "#{aquatic.name}.png", content_type: "image/png")
+aquatic.save
 
 puts "Creating 16 plants ..."
 

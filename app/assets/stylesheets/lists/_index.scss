@@ -1,13 +1,13 @@
 .tasks-list-container {
 
   .task {
+    margin: 60px;
     display: flex;
-    margin: 20px 0;
   }
 
   .check-box {
-    height: 25px;
-    width: 25px;
+    height: 25px !important;
+    width: 25px !important;
     border: 1px solid black;
     border-radius: 50%;
     margin-right: 20px;
@@ -24,7 +24,6 @@
   }
 
   .fa-check {
-    color: white;
     font-size: large;
     margin: 4px 0 0 4px;
   }
@@ -34,7 +33,13 @@
   }
 }
 
+.task-header {
+  display: flex;
+}
+
 .tasks-list-container .text {
+  max-width: 700px;
+
   .name {
     font-size: 18px;
     margin-bottom: 2px;
@@ -53,19 +58,6 @@
   }
 }
 
-
-.list-container {
-  margin: 70px 0 0 0;
-  height: 400px;
-
-  .card a {
-    text-align: center;
-    padding: 10px 90px;
-    background-color: #3A4F39;
-    color: white;
-  }
-}
-
 @media screen and (min-width: 930px) {
   .container-task-list {
     display: flex;
@@ -76,4 +68,32 @@
     padding-left: 50px;
     border-left: 1px solid black;
   }
+}
+
+.task-img {
+  width: 80px;
+  max-height: 100px;
+}
+
+@media screen and (max-width: 560px) {
+  .task {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .task-header {
+    justify-content: center;
+    margin-left: 32px;
+  }
+}
+
+.check-box-done {
+  .fa-check {
+    color: white;
+  }
+}
+
+.fa-check-no {
+  color: #F4F4F4;
 }

@@ -3,11 +3,16 @@
 
 <!-- Progress bar -->
 
-<% percentage = (@tasks.all.where(done: true).count.to_f/@tasks.all.count.to_f) * 100 %>
+<% percentage = (@task_done.count.to_f/@tasks.count.to_f) * 100 %>
 
 <div class="container">
-  <div class="progress" style="max-width: 1000px; margin:0 auto;">
-    <div class="progress-bar" role="progressbar" style="width: <%= percentage %>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= percentage.to_i %>%</div>
+  <% if percentage.nan? %>
+    <h3 class="text-centred">You have no tasks at the moment</h3>
+  <% else %>
+    <div class="progress" style="max-width: 1000px; margin:0 auto;">
+    <div class="progress-bar" role="progressbar" style="width: <%= percentage %>%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><%= percentage.to_i %></div>
+  <% end %>
+
   </div>
 </div>
 
@@ -20,17 +25,20 @@
 
       <% if task.done %>
         <div class="task">
-          <% plant_id = task.plant_id %>
-          <%= cl_image_tag Plant.find(plant_id).photo.key, width:100 %>
+          <div class="task-header">
+            <% plant_id = task.plant_id %>
+            <%= cl_image_tag Plant.find(plant_id).photo.key, class:"task-img" %>
 
-          <div class="check-box-done" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
-            <i class="fa-solid fa-check"></i>
+            <div class="check-box-done" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
+              <i class="fa-solid fa-check"></i>
+            </div>
           </div>
+
           <div class="text">
-            <p class='name'><%= task.name %></p>
-            <p class='description'><%= task.description %></p>
-            <p class='comment'><%= task.comment %></p>
-            <p class='time'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</p>
+            <p class='name' style="font-size: 24px;"><%= task.name %></p>
+            <p class='description'style="font-size: 14px;"><%= task.description %></p>
+            <p class='comment'style="font-size: 14px;"><%= task.comment %></p>
+            <p class='time' style="font-weight:600;">Completed <%= time_ago_in_words(task.updated_at) %> ago.</p>
           </div>
         </div>
         <!--<p>Task completed on <%#= (task.updated_at + 4.hours).strftime("%a %b %e at %l:%M %p") %></p>-->
@@ -38,16 +46,24 @@
       <% else %>
 
         <div class="task">
-          <% plant_id = task.plant_id %>
-          <%= cl_image_tag Plant.find(plant_id).photo.key, width:100 %>
+          <div class="task-header">
+            <% plant_id = task.plant_id %>
+            <%= cl_image_tag Plant.find(plant_id).photo.key, class:"task-img" %>
 
-          <div class="check-box" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>></div>
+            <div class="check-box" data-bs-toggle="modal" data-bs-target=<%= "#exampleModal#{index}" %>>
+              <i class="fa-solid fa-check fa-check-no"></i>
+            </div>
+          </div>
 
           <div class="text">
             <p class='name'><%= task.name %></p>
-            <p class='description'><%= task.description %></p>
-            <p class='comment'><%= task.comment %></p>
-            <p class='time'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</p>
+            <p class='description' style="font-size: 14px;"><%= task.description %></p>
+            <p class='comment' style="font-size: 14px;"><%= task.comment %></p>
+            <% if task.done == true %>
+              <p class='time'>Completed <%= time_ago_in_words(task.updated_at) %> ago.</p>
+            <% else %>
+              <p></p>
+            <% end %>
           </div>
         </div>
 
@@ -73,16 +89,6 @@
         </div>
       </div>
 
-    <% end %>
-  </div>
-
-  <!-- Lists -->
-
-  <div class="list-container">
-    <% @list.each do |list| %>
-      <div class="card mb-4">
-        <%= link_to list.name, class: "list-link" %>
-      </div>
     <% end %>
   </div>
 

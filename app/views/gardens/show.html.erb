@@ -1,12 +1,15 @@
 <%= render "shared/navbar" %>
 
-<div class = "div_btn_de-edi">
-  <%= link_to garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn_edit_delete" do %>
-    <i class="fa-solid fa-trash"></i>
-  <% end %>
-</div>
-
-<h1 class="title my-5">Plants in <%= @garden.name %></h1>
+<h1 class="title my-5">
+  <div class="garden-title">
+    <p class="font-oleo">Plants in <%= @garden.name %></p>
+    <div class = "div_btn_de-edi">
+      <%= link_to garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn_edit_delete" do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+</h1>
 <%# <div data-controller="weather">
   <div class ="weather_card">
     <h2><strong>Weather</strong></h2>

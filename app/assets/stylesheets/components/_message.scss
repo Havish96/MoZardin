@@ -9,7 +9,6 @@
 
   .msg {
     display: flex;
-    justify-content: flex-end;
   }
 }
 
@@ -20,55 +19,53 @@
 }
 
 .sender-style {
+
+  display: flex;
+  justify-content: flex-end;
+
   img {
     display: none;
   }
 
   .timer {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 20px 0 0;
+    padding: 0 36px 14px 0;
+    margin: 0;
+    font-size: 12px;
   }
   .content {
     background-color: lightcoral;
     max-width: calc(100% - 100px);
     border-radius: 25px;
   }
-  .content p {
-    padding: 10px 20px;
-    word-wrap: break-word;
-    max-width: calc(100% - 100px);
+  p {
     display: flex;
     justify-content: flex-end;
-    margin-left: 0;
-  }
-  .content .timer {
-    margin: 0;
-  }
-  .content p:last-child {
+    padding: 10px 8px 10px 20px;
+    word-wrap: break-word;
     margin: 0;
   }
 }
 
+// ----------------------------- Receiver - left --------------------------------------------------
+
 .receiver-style {
+
   .timer {
-    padding: 0 0 0 20px;
+    padding: 0 0 14px 20px;
+    margin: 0;
+    font-size: 12px;
   }
   .content {
+    max-width: calc(100% - 56px);
     background-color: lightblue;
-    max-width: calc(100% - 100px);
     border-radius: 25px;
   }
   p {
     padding: 10px 20px;
     word-wrap: break-word;
-    max-width: calc(100% - 100px);
     margin: 0;
   }
-  .content .timer {
-    margin: 0;
-  }
-  .content p:last-child {
-    margin: 0;
+  p:first-child {
+    padding-bottom: 2px;
   }
 }

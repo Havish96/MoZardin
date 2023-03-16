@@ -5,9 +5,7 @@
     <%= cl_image_tag 'avatar', class:"avatar avatar-msg" %>
   <% end %>
   <div class="content">
-    <p>
-      <%= message.content %>
+      <p><%= message.content %></p>
       <p class="timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
-    </p>
   </div>
 </div>

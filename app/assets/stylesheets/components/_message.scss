@@ -34,8 +34,9 @@
     word-wrap: break-word;
   }
   .content {
-    background-color: lightcoral;
+    background-color: #D8F2DC;
     border-radius: 12px;
+    max-width: 700px;
   }
   p {
     display: flex;
@@ -56,9 +57,9 @@
     font-size: 12px;
   }
   .content {
-    background-color: lightblue;
+    background-color: #C7D9A0;
     border-radius: 12px;
-    max-width: calc(100% - 54px);
+    max-width: 700px;
   }
   p {
     padding: 10px 20px;

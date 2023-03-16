@@ -12,17 +12,15 @@
 </h1>
 <%# <div data-controller="weather">
   <div class ="weather_card">
-    <h2><strong>Weather</strong></h2>
-    <h3><span data-weather-target="address"> <!-- TODO: CITY NAME --> </span></h3>
-    <h4 class="text-secondary" data-weather-target="date"><!-- TODO: DATE --></h4>
-    <h5 class="tempature-style" data-weather-target="temperature"><!-- TODO: DESCRIPTION --></h5>
-    <h6 class="time_location"  data-weather-target="time_location"> </h6>
-
+    <h3 data-weather-target="address"> <!-- TODO: CITY NAME --> </h3>
+    <h4 data-weather-target="date"><!-- TODO: DATE --></h4>
+    <h5 data-weather-target="temperature"><!-- TODO: DESCRIPTION --></h5>
+    <h6 data-weather-target="time_location"> </h6>
   </div>
 </div> %>
 
-<div class="article-container" data-controller="weather">
-  <article class="widget">
+<div class="article-container">
+  <article class="widget" data-controller="weather">
     <div class="weatherIcon">
       <div class="element">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 61.7 42.8" style="enable-background:new 0 0 61.7 42.8;" xml:space="preserve">
@@ -89,9 +87,9 @@
       </div>
     </div>
     <div class="weatherData">
-      <h1 class="temperature">25&deg;</h1>
-      <h2 class="description">Partly Cloudy</h2>
-      <h3 class="city">Black River</h3>
+      <h1 class="temperature"><span data-weather-target="temperature"></span> <span class="deg">&deg;</span></h1>
+      <h2 class="city" data-weather-target="address"><%= @address %></h2>
+      <h3 class="country">Mauritius</h3>
     </div>
     <div class="date">
       <h4 class="month" id="month"><%= Date::MONTHNAMES[Time.now.month] %></h4>

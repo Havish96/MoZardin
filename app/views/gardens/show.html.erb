@@ -12,7 +12,7 @@
 </h1>
 
 <div class="article-container">
-  <article class="widget" data-controller="weather">
+  <article class="widget" data-controller="weather" data-weather-api-key-value="<%= ENV['FORECAST_API_KEY']%>">
     <div class="weatherIcon">
       <div class="element">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 61.7 42.8" style="enable-background:new 0 0 61.7 42.8;" xml:space="preserve">
@@ -81,7 +81,7 @@
     <div class="weatherData">
       <h1 class="temperature"><span data-weather-target="temperature"></span> <span class="deg">&deg;</span></h1>
       <h2 class="city" data-weather-target="address"><%= @address %></h2>
-      <h3 class="country">Mauritius</h3>
+      <h3 class="country" data-weather-target="region"></h3>
     </div>
     <div class="date">
       <h4 class="month" id="month"><%= Date::MONTHNAMES[Time.now.month] %></h4>

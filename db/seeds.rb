@@ -4,6 +4,8 @@ puts 'Destroying all Conditions'
 Condition.destroy_all
 puts 'Destroying all Tags'
 Tag.destroy_all
+puts "Destroying all Tasks"
+Task.destroy_all
 puts "Destroying all Plants"
 Plant.destroy_all
 puts 'Destroying all Categories'
@@ -355,6 +357,9 @@ Guide.create(title: "How to plant grass seed",
              author: "Bertram Perry",
              image_url: "https://nualgiponds.com/wp-content/uploads/2014/04/water-garden-residential-pond-1080x745.jpg")
 
+# messages
+puts 'Destroying messages'
+Message.destroy_all
 # Chatrooms
 Chatroom.destroy_all
 puts "Creating Chatrooms"

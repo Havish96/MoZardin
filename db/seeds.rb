@@ -13,7 +13,7 @@ Category.destroy_all
 puts 'Destroying all Gardens'
 Garden.destroy_all
 
-puts "Creating 4 categories"
+puts "Creating 5 categories"
 fruits = Category.create(name: "Fruits & Vegetables",
                          description: "Botanically, fruits and vegetables are classified depending on which part of" \
                                       " the plant they come from. A fruit develops from the flower of a plant, while" \
@@ -366,7 +366,6 @@ plant17= Plant.new(name:'orchid-tree',
                    instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
                                 'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
                                 ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
-
 plant17.category= climbers
 plant17_photo= URI.open('https://th.bing.com/th/id/R.87132d478eabaed5dd8e27848a3f52b8?rik=9xBruc66FGj57g&riu=http%3a%2f%2f2.bp.blogspot.com%2f-Kp3Num0OczQ%2fVOMoOv8ZfzI%2fAAAAAAAAPAc%2fOeTUfW2AGHc%2fs1600%2f0_56f46_2ee01ef1_orig.png&ehk=jwGPjXfT1XOScdmvaLL385tVsbkahFqizvPQnFx5o%2fg%3d&risl=&pid=ImgRaw&r=0')
 plant17.photo.attach(io: plant17_photo, filename: "#{plant17.name}.png", content_type: "image/png")
@@ -386,7 +385,6 @@ plant18= Plant.new(name:'Calico Flower',
   instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
                'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
                ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
-
 
 plant18.category= climbers
 plant18_photo= URI.open('https://1.bp.blogspot.com/_VC5iSShRPRs/TJ3m11DiWFI/AAAAAAAABgY/b4dklp2qKjQ/s1600/coleaus01L.png')
@@ -408,9 +406,6 @@ plant19= Plant.new(name:'Sweet Pea',
                'It is not necessary to dig a huge trench, but it should be Â±250mm deep and wide. When removing soil from the trench, remember to put the topsoil on one side and the bottom soil on another.'\
                'Work a lot of well-rotted manure and compost into the bottom soil, plus a cup of superphosphate for each running metre of trench.'\
                'Next, mix compost and well-rotted manure into topsoil, adding half a cup of 3:2:1 (28) SR fertilizer for each metre of trench. This should be done a month in advance of planting. In the week before sowing, rake a sprinkling of lime into the trenches.')
-
-
-
 plant19.category= climbers
 plant19_photo= URI.open('https://webstockreview.net/images/peas-clipart-sweet-pea-5.png')
 plant19.photo.attach(io: plant19_photo, filename: "#{plant19.name}.png", content_type: "image/png")
@@ -430,8 +425,6 @@ plant20= Plant.new(name:'Formosa',
   instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
                'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
                ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
-
-
 plant20.category= climbers
 plant20_photo= URI.open('https://i.pinimg.com/originals/27/9e/79/279e7972e887bd51e4b2bc6c5e9db923.png')
 plant20.photo.attach(io: plant20_photo, filename: "#{plant20.name}.png", content_type: "image/png")
@@ -440,9 +433,6 @@ cond20 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')
 cond20.plant = plant20
 cond20.save
 puts "created Formosa"
-
-
-
 
 # Guides
 Guide.destroy_all
@@ -457,6 +447,7 @@ Guide.create(title: "How to plant grass seed",
 # messages
 puts 'Destroying messages'
 Message.destroy_all
+
 # Chatrooms
 Chatroom.destroy_all
 puts "Creating Chatrooms"

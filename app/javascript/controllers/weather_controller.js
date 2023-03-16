@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["temperature", "address"]
   connect() {
-    fetch('https://api.weatherapi.com/v1/forecast.json?key=bb8ae13d2adc43af89651804231303&q=${this.addressTarget.textContent}-mauritius', {
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=bb8ae13d2adc43af89651804231303&q=${this.addressTarget.textContent}-mauritius`, {
       method: "GET",
       headers: { "Accept": "application/json" }
     })

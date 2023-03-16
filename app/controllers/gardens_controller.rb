@@ -19,6 +19,23 @@ class GardensController < ApplicationController
   def show
     @garden = Garden.find(params[:id])
     @tags = Tag.all.where(garden_id: @garden)
+    @address = current_user.city
+  end
+
+  def destroy
+    @garden = Garden.find(params[:id])
+    @garden.destroy
+    redirect_to gardens_path, status: :see_other
+  end
+
+  def edit
+    @garden = Garden.find(params[:id])
+  end
+
+  def update
+    @garden = Garden.find(params[:id])
+    @garden.update(garden_params)
+    redirect_to garden_path(@garden)
   end
 
   private

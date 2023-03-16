@@ -2,10 +2,13 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="weather"
 export default class extends Controller {
-  static targets = ["temperature", "address","date", "time"]
+  static values = {
+    apiKey: String
+  }
+  static targets = ["temperature", "address", "region"]
   connect() {
-
-    fetch('https://api.weatherapi.com/v1/forecast.json?key=bb8ae13d2adc43af89651804231303&q=-20.122394,57.403180&days=5', {
+    console.log(this.apiKeyValue)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${this.apiKeyValue}&q=${this.addressTarget.textContent}-mauritius`, {
       method: "GET",
       headers: { "Accept": "application/json" }
     })
@@ -15,19 +18,19 @@ export default class extends Controller {
   }
 
 
-  initialize() {
-    this.apiKey = "bb8ae13d2adc43af89651804231303"
-  }
+  // initialize() {
+  //   this.apiKey = this.keyValue
+  // }
 
   #updateGarden(data) {
     console.log(data)
-    this.temperatureTarget.innerText = `${Math.round(data.current.temp_c)} °C`
-    this.addressTarget.innerText = data.location.region
+    this.temperatureTarget.innerText = `${Math.round(data.current.temp_c)}`
+    this.regionTarget.innerText = data.location.region
     // const today = new Date();
     // const localOffset = data.timezone + today.getTimezoneOffset() * 60
     // const localDate = new Date(today.setUTCSeconds(localOffset))
     // const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
     // const formattedDate = localDate.toLocaleDateString("en-US", options)
-    this.dateTarget.innerText = data.location.localtime
+    // this.dateTarget.innerText = data.location.localtime
   }
 }

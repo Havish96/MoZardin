@@ -1,32 +1,13 @@
-<div id="message-<%= message.id %>">
-
-  <% if message.user.id == current_user.id %>
-
-  <div class="message-right">
-    <div class="message-container">
-      <div class="message-box">
-        <p class="right-msg right-msg-content"><%= message.content %></p>
-      </div>
-      <p class="right-timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
-    </div>
-  </div>
-
+<div id="message-<%= message.id %>" class="msg">
+  <% if message.user.photo.attached? %>
+    <%= cl_image_tag message.user.photo.key, class:"avatar avatar-msg" %>
   <% else %>
-
-  <div class="message">
-    <div class="message-container">
-      <div class="message-box">
-        <% if message.user.photo.attached? %>
-          <%= cl_image_tag message.user.photo.key, class:"avatar" %>
-        <% else %>
-          <%= cl_image_tag 'avatar', class:"avatar" %>
-        <% end %>
-        <p class="content"><%= message.content %></p>
-      </div>
-      <p class="left-timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
-    </div>
-  </div>
-
+    <%= cl_image_tag 'avatar', class:"avatar avatar-msg" %>
   <% end %>
-
+  <div class="content">
+    <p>
+      <%= message.content %>
+      <p class="timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
+    </p>
+  </div>
 </div>

@@ -1,25 +1,74 @@
 .message-row {
   margin-bottom: 10px;
   padding: 8px;
+  img {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+  }
+
+  .msg {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 // To style the message itself
-// .sender-style, .receiver-style {
-//   width: 70%;
-//   max-width: 400px;
-//   border-radius: 4px;
-//   padding: 8px;
-//   min-height: 80px;
-// }
+.sender-style, .receiver-style {
+  padding: 8px;
+  min-height: 80px;
+}
 
 .sender-style {
-  .right-msg-content {
+  img {
+    display: none;
+  }
+
+  .timer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 0 0;
+  }
+  .content {
     background-color: lightcoral;
+    max-width: calc(100% - 100px);
+    border-radius: 25px;
+  }
+  .content p {
+    padding: 10px 20px;
+    word-wrap: break-word;
+    max-width: calc(100% - 100px);
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+  .content .timer {
+    margin: 0;
+  }
+  .content p:last-child {
+    margin: 0;
   }
 }
 
 .receiver-style {
+  .timer {
+    padding: 0 0 0 20px;
+  }
   .content {
     background-color: lightblue;
+    max-width: calc(100% - 100px);
+    border-radius: 25px;
+  }
+  p {
+    padding: 10px 20px;
+    word-wrap: break-word;
+    max-width: calc(100% - 100px);
+    margin: 0;
+  }
+  .content .timer {
+    margin: 0;
+  }
+  .content p:last-child {
+    margin: 0;
   }
 }

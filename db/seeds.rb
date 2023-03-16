@@ -51,9 +51,12 @@ aquatic_photo = URI.open('https://images.unsplash.com/photo-1490772888775-55fcee
 aquatic.photo.attach(io: aquatic_photo, filename: "#{aquatic.name}.png", content_type: "image/png")
 aquatic.save
 
-climbers = Category.create(name: 'Climbers & Creepers Shrubs',
+climbers = Category.create(name: 'Climbers',
                           description: "This is a very popular ornamental tree in subtropical and tropical climates,"\
                                        "grown for its scented flowers and also used as a food item in Indian cuisine.")
+climbers_photo = URI.open('https://images.unsplash.com/photo-1458322493962-69c5a4ef7ddf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
+climbers.photo.attach(io: climbers_photo, filename: "#{climbers.name}.png", content_type: "image/png")
+climbers.save
 
 
 
@@ -409,7 +412,7 @@ plant19= Plant.new(name:'Sweet Pea',
 
 
 plant19.category= climbers
-plant19_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant19_photo= URI.open('https://webstockreview.net/images/peas-clipart-sweet-pea-5.png')
 plant19.photo.attach(io: plant19_photo, filename: "#{plant19.name}.png", content_type: "image/png")
 plant19.save
 cond19 = Condition.new(sun: '6-12hrs', water: 'Aquatic', climate: '10-15˚C')
@@ -430,7 +433,7 @@ plant20= Plant.new(name:'Formosa',
 
 
 plant20.category= climbers
-plant20_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant20_photo= URI.open('https://i.pinimg.com/originals/27/9e/79/279e7972e887bd51e4b2bc6c5e9db923.png')
 plant20.photo.attach(io: plant20_photo, filename: "#{plant20.name}.png", content_type: "image/png")
 plant20.save
 cond20 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')

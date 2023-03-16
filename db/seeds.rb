@@ -373,7 +373,7 @@ plant18= Plant.new(name:'Calico Flower',
 
 
 plant18.category= climbers
-plant18_photo= URI.open('https://th.bing.com/th/id/OIP.ZZaXCMe7yiZDfXJLZ2O3-QHaGF?pid=ImgDet&rs=1')
+plant18_photo= URI.open('https://1.bp.blogspot.com/_VC5iSShRPRs/TJ3m11DiWFI/AAAAAAAABgY/b4dklp2qKjQ/s1600/coleaus01L.png')
 plant18.photo.attach(io: plant18_photo, filename: "#{plant18.name}.png", content_type: "image/png")
 plant18.save
 cond18 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')

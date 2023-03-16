@@ -2,10 +2,10 @@
   <% if message.user.photo.attached? %>
     <%= cl_image_tag message.user.photo.key, class:"avatar avatar-msg" %>
   <% else %>
-    <%= cl_image_tag 'avatar', class:"avatar avatar-msg" %>
+    <%= image_tag 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png', class:"avatar avatar-msg" %>
   <% end %>
   <div class="content">
       <p><%= message.content %></p>
-      <p class="timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>
   </div>
 </div>
+<p class="timer"><%= (message.created_at + 4.hour).strftime("%l:%M %p") %></p>

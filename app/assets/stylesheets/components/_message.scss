@@ -3,7 +3,6 @@
   padding: 8px;
   img {
     display: flex;
-    justify-content: flex-end;
     margin-right: 15px;
   }
 
@@ -19,28 +18,29 @@
 }
 
 .sender-style {
-
-  display: flex;
-  justify-content: flex-end;
+  .msg {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   img {
     display: none;
   }
 
   .timer {
-    padding: 0 36px 14px 0;
     margin: 0;
     font-size: 12px;
+    padding: 10px 0 20px 0;
+    word-wrap: break-word;
   }
   .content {
     background-color: lightcoral;
-    max-width: calc(100% - 100px);
-    border-radius: 25px;
+    border-radius: 12px;
   }
   p {
     display: flex;
     justify-content: flex-end;
-    padding: 10px 8px 10px 20px;
+    padding: 10px 20px;
     word-wrap: break-word;
     margin: 0;
   }
@@ -51,21 +51,18 @@
 .receiver-style {
 
   .timer {
-    padding: 0 0 14px 20px;
-    margin: 0;
+    padding: 10px 0 20px 0;
+    margin: 0 0 0 56px;
     font-size: 12px;
   }
   .content {
-    max-width: calc(100% - 56px);
     background-color: lightblue;
-    border-radius: 25px;
+    border-radius: 12px;
+    max-width: calc(100% - 54px);
   }
   p {
     padding: 10px 20px;
     word-wrap: break-word;
     margin: 0;
-  }
-  p:first-child {
-    padding-bottom: 2px;
   }
 }

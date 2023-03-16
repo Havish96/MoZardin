@@ -51,7 +51,16 @@ aquatic_photo = URI.open('https://images.unsplash.com/photo-1490772888775-55fcee
 aquatic.photo.attach(io: aquatic_photo, filename: "#{aquatic.name}.png", content_type: "image/png")
 aquatic.save
 
-puts "Creating 16 plants ..."
+climbers = Category.create(name: 'Climbers',
+                          description: "This is a very popular ornamental tree in subtropical and tropical climates,"\
+                                       "grown for its scented flowers and also used as a food item in Indian cuisine.")
+climbers_photo = URI.open('https://images.unsplash.com/photo-1458322493962-69c5a4ef7ddf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
+climbers.photo.attach(io: climbers_photo, filename: "#{climbers.name}.png", content_type: "image/png")
+climbers.save
+
+
+
+puts "Creating 20 plants ..."
 
 # Category - Fruits & Vegetables
 plant1 = Plant.new(name: 'Tomato',
@@ -346,6 +355,94 @@ cond16 = Condition.new(sun: '8-12hrs', water: 'Aquatic', climate: '20-35˚C')
 cond16.plant = plant16
 cond16.save
 puts "created Lotus"
+
+plant17= Plant.new(name:'orchid-tree',
+                   description: 'This species bears compound foliage consisting of only 2 broad leaflets and flowers '\
+                                'have 5 petals and are in shades of red, pink, purple, orange, or yellow, and are often fragrant.'\
+                                ' It is often slow growing and do not like being transplanted. '\
+                                'They prefer acidic soils, and full sun but can be grown in partial sun.',
+
+                   scientific_name: 'Bauhina variegata', origin: ' Southeast Asia',
+                   instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+                                'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+                                ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+plant17.category= climbers
+plant17_photo= URI.open('https://th.bing.com/th/id/R.87132d478eabaed5dd8e27848a3f52b8?rik=9xBruc66FGj57g&riu=http%3a%2f%2f2.bp.blogspot.com%2f-Kp3Num0OczQ%2fVOMoOv8ZfzI%2fAAAAAAAAPAc%2fOeTUfW2AGHc%2fs1600%2f0_56f46_2ee01ef1_orig.png&ehk=jwGPjXfT1XOScdmvaLL385tVsbkahFqizvPQnFx5o%2fg%3d&risl=&pid=ImgRaw&r=0')
+plant17.photo.attach(io: plant17_photo, filename: "#{plant17.name}.png", content_type: "image/png")
+plant17.save
+cond17 = Condition.new(sun: '8-12hrs', water: 'Regular', climate: '15-25˚C')
+cond17.plant = plant17
+cond17.save
+puts "created orchid-tree"
+
+plant18= Plant.new(name:'Calico Flower',
+  description: 'Native to South America, Calico flower is a tender evergreen vine with very unusual flowers. Leaves are beautiful, bright green heart shaped. '\
+               'These are about 3 in long by 2 in wide and grow closely together to create a dense mass of foliage.'\
+               ' Bright green leaves are usually evergreen and the vining stems become quite woody with age. Flowers are solitary and quite large, for a pipevine',
+
+
+  scientific_name: 'Aristolochia Littoralis', origin: 'Brazil',
+  instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+               'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+               ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+
+plant18.category= climbers
+plant18_photo= URI.open('https://1.bp.blogspot.com/_VC5iSShRPRs/TJ3m11DiWFI/AAAAAAAABgY/b4dklp2qKjQ/s1600/coleaus01L.png')
+plant18.photo.attach(io: plant18_photo, filename: "#{plant18.name}.png", content_type: "image/png")
+plant18.save
+cond18 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')
+cond18.plant = plant18
+cond18.save
+puts "created calico flower"
+
+plant19= Plant.new(name:'Sweet Pea',
+  description: ' Sweet peas are one of the joys of the winter garden, particularly in cooler or more temperate areas. Seed companies offer both climbing and bush (dwarf) varieties,'\
+               ' as well as packets of single-colour flowers in a range of hues: dark purple, maroon, pink, rose, salmon, blue and white. Sweet peas make lovely scented cut flowers.'\
+               'These climbers and semi-climbers need something to grow on or against, so put a trellis in place or install criss-cross wires against a wall, to give them something to wind around. ',
+
+
+  scientific_name: ' Lathyrus Odoratus', origin: 'Italy',
+  instruction: 'Choose a sunny north- or east-facing position for your bed and prepare the soil well in advance of planting, as sweet peas are gross (heavy) feeders.'\
+               'It is not necessary to dig a huge trench, but it should be Â±250mm deep and wide. When removing soil from the trench, remember to put the topsoil on one side and the bottom soil on another.'\
+               'Work a lot of well-rotted manure and compost into the bottom soil, plus a cup of superphosphate for each running metre of trench.'\
+               'Next, mix compost and well-rotted manure into topsoil, adding half a cup of 3:2:1 (28) SR fertilizer for each metre of trench. This should be done a month in advance of planting. In the week before sowing, rake a sprinkling of lime into the trenches.')
+
+
+
+plant19.category= climbers
+plant19_photo= URI.open('https://webstockreview.net/images/peas-clipart-sweet-pea-5.png')
+plant19.photo.attach(io: plant19_photo, filename: "#{plant19.name}.png", content_type: "image/png")
+plant19.save
+cond19 = Condition.new(sun: '6-12hrs', water: 'Aquatic', climate: '10-15˚C')
+cond19.plant = plant19
+cond19.save
+puts "created Sweet Pea"
+
+plant20= Plant.new(name:'Formosa',
+  description: 'Bougainvilleas are among the most spectacular and colourful of all climbers, with dozens of cultivars available.'\
+               'They come in shades of white, pink, red, orange, lilac, purple, cerise and copper; there is even one with pink and white flowers on the same plant.'\
+               'There are also a number of double varieties, plus some with variegated leaves. These colourful charmers are handy for'\
+               'a variety of functions, from covering walls and pergolas to being used as ground covers, specimen plants and tub subjects.'\
+               'They are very vigorous, heavy and thorny, and the stronger growers need stout support.',
+  scientific_name: 'Bougainvillea Cultivars', origin: 'Southwestern China',
+  instruction: 'They are fast growers, but can be trimmed to suit your garden, either as a single-trunk standard,'\
+               'Bauhinia needs to be scarified and soaked in warm water for 24 hours prior to sowing.'\
+               ' Most of the year, this is not a messy tree, but when the pods fall, they drop straight down, best over a lawn or sidewalk where cleanup is easy.')
+
+
+plant20.category= climbers
+plant20_photo= URI.open('https://i.pinimg.com/originals/27/9e/79/279e7972e887bd51e4b2bc6c5e9db923.png')
+plant20.photo.attach(io: plant20_photo, filename: "#{plant20.name}.png", content_type: "image/png")
+plant20.save
+cond20 = Condition.new(sun: '9-12hrs', water: 'Regular', climate: '10-15˚C')
+cond20.plant = plant20
+cond20.save
+puts "created Formosa"
+
+
+
 
 # Guides
 Guide.destroy_all

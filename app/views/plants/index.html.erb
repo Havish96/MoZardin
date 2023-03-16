@@ -30,7 +30,11 @@
         <%= link_to plant_path(plant) do %>
           <div class="wrapper">
             <div class="colorProd"></div>
+            <% if plant.photo.key.nil? %>
+              <p>No image</p>
+            <% else %>
             <div class="imgProd" style="background-image: url('<%= cl_image_path plant.photo.key %>');"></div>
+            <% end %>
             <div class="infoProd">
               <p class="nombreProd"><%= plant.name %></p>
               <p class="extraInfo"><strong><%= plant.scientific_name %></strong></p>

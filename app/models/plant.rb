@@ -7,5 +7,6 @@ class Plant < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_name,
                   against: %i[name scientific_name],
+                  associated_against: { category: :id },
                   using: { tsearch: { prefix: true } }
 end

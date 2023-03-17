@@ -22,7 +22,7 @@ class TasksController < ApplicationController
   end
 
   def self.generate_tasks(user)
-    weather = TaskController.weather_today(user)
+    weather = TasksController.weather_today(user)
     if user.lists.count.zero?
       list = List.create!(name: user.nickname, user_id: user.id)
     else

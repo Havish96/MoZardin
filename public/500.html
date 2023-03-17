@@ -6,104 +6,118 @@
   <style>
     @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
-  .rails-default-error-page {
-    overflow: hidden;
-    background-color: #000000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Inconsolata', Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: rgba(128, 255, 128, 0.8);
-    text-shadow:
-        0 0 1ex rgba(51, 255, 51, 1),
-        0 0 2px rgba(255, 255, 255, 0.8);
-  }
+    .rails-default-error-page {
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.2rem);
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow:
+      0 0 1ex rgba(51, 255, 51, 1),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
 
-  .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background:
-        repeating-linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0,
-        rgba(0, 0, 0, 0.3) 50%,
-        rgba(0, 0, 0, 0) 100%);
-    background-size: auto 4px;
-    z-index: 1;
-  }
+.rails-default-error-page::-webkit-scrollbar {
+  display: none;
+}
 
-  .overlay::before {
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-        0deg,
-        transparent 0%,
-        rgba(32, 128, 32, 0.2) 2%,
-        rgba(32, 128, 32, 0.8) 3%,
-        rgba(32, 128, 32, 0.2) 3%,
-        transparent 100%);
-    background-repeat: no-repeat;
-    animation: scan 7.5s linear 0s infinite;
-  }
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+      repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0) 100%);
+  background-size: auto 4px;
+  z-index: 1;
+}
 
-  @keyframes scan {
-    0%        { background-position: 0 -100vh; }
-    35%, 100% { background-position: 0 100vh; }
-  }
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      0deg,
+      transparent 0%,
+      rgba(32, 128, 32, 0.2) 2%,
+      rgba(32, 128, 32, 0.8) 3%,
+      rgba(32, 128, 32, 0.2) 3%,
+      transparent 100%);
+  background-repeat: no-repeat;
+  animation: scan 7.5s linear 0s infinite;
+}
 
-  .terminal {
-    margin: 0 50px;
-    padding: 4rem;
-    text-transform: uppercase;
-  }
+@keyframes scan {
+  0%        { background-position: 0 -100vh; }
+  35%, 100% { background-position: 0 100vh; }
+}
 
-  .output {
-    color: rgba(128, 255, 128, 0.8);
-    text-shadow:
-        0 0 1px rgba(51, 255, 51, 0.4),
-        0 0 2px rgba(255, 255, 255, 0.8);
-  }
+.terminal {
+  margin: 0 50px;
+  padding: 4rem;
+  text-transform: uppercase;
+}
 
-  .output::before {
-    content: "> ";
-  }
+.output {
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow:
+      0 0 1px rgba(51, 255, 51, 0.4),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
 
-  .rails-default-error-page a::before {
-    content: "[";
-  }
+.output::before {
+  content: "> ";
+}
 
-  .rails-default-error-page a::after {
-    content: "]";
-  }
+.rails-default-error-page a::before {
+  content: "[";
+}
 
-  .rails-default-error-page .errorcode {
-    color: white;
-  }
+.rails-default-error-page a::after {
+  content: "]";
+}
 
-  /* -------------------------------------------- Error code ----------------------------------------------- */
+.rails-default-error-page .errorcode {
+  color: white;
+}
 
-    </style>
-  </head>
+/* -------------------------------------------- Error code ----------------------------------------------- */
 
-  <body class="rails-default-error-page">
-    <!-- This file lives in public/404.html -->
+  </style>
+</head>
 
-    <div class="noise"></div>
-    <div class="overlay"></div>
-    <div class="terminal">
-      <h1>Error <span class="errorcode">404</span></h1>
-      <p class="output">The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
-      <p class="output">Thank you.</p>
-    </div>
+<body class="rails-default-error-page">
+  <!-- This file lives in public/404.html -->
 
-  </body>
-  </html>
+<div class="noise"></div>
+<div class="overlay"></div>
+<div class="terminal">
+<h1>Error <span class="errorcode">500</span></h1>
+<br><br>
+  <code>
+    <% @le_wagon_team = ["Basil", "Tsiky", "Billy", "Christian", "Adel", "Fabrice", "Dushyant", "Jean Paul", "Emmanuel", "William", "Ajmal"] %>
+    <br><br>
+    <% @le_wagon_team.each do |alumni| %>
+      <p>Dear <%= alumni %>,</p>
+
+      <p>Thank you for being the best teaching staff ever! You have made this course an amazing experience. We have learned so much from you and will never forget your kindness and patience. You are all amazing and We are so grateful for everything you have done for us.</p>
+
+      <p>Sincerely,</p>
+      <p>Your students</p>
+    <% end %>
+  </code>
+</div>
+
+</body>
+</html>

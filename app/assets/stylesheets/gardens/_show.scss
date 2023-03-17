@@ -117,7 +117,7 @@
 }
 
 .weatherIcon{
-	background-color: #6dd4f6;
+	background-color: rgb(208, 208, 208);
 	height: 70%;
 	width: 100%;
 	position: relative;
@@ -208,9 +208,9 @@
 }
 
 .element {
-  position: absolute; top: 65%; left: 50%; transform: translate(-50%,-50%);
-	height: 200px;
-	width: 200px;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+	height: 150px;
+	width: 150px;
 	.container {
 	  display: flex;
 	  justify-content: center;

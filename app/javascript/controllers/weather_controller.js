@@ -26,6 +26,7 @@ export default class extends Controller {
     console.log(data)
     this.temperatureTarget.innerText = `${Math.round(data.current.temp_c)}`
     this.regionTarget.innerText = data.location.region
+    // this.conditionTarget.innerText = data.current.condition.text
     // const today = new Date();
     // const localOffset = data.timezone + today.getTimezoneOffset() * 60
     // const localDate = new Date(today.setUTCSeconds(localOffset))

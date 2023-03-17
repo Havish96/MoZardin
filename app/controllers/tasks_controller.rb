@@ -22,7 +22,7 @@ class TasksController < ApplicationController
   end
 
   def self.generate_tasks(user)
-    weather = TasksController.weather_today(user)
+    weather = weather_today(user)
     if user.lists.count.zero?
       list = List.create!(name: user.nickname, user_id: user.id)
     else
@@ -54,12 +54,12 @@ class TasksController < ApplicationController
                                 done: false,
                                 plant_id: plant.id,
                                 list_id: list.id)
-          elsif weather['current']['precip_mm'] < 30 && Condition.find_by(plant_id: plant.id).water == ('Regular' || 'Moderate')
+          elsif weather['current']['precip_mm'] < 30 && Condition.find_by(plant_id: plant.id).water == 'Regular'
             new_task = Task.new(name: plant.name, description: 'Please water your plant [NO RAIN IN YOUR AREA TODAY]',
                                 done: false,
                                 plant_id: plant.id,
                                 list_id: list.id)
-          elsif weather['current']['precip_mm'] > 30 && Condition.find_by(plant_id: plant.id).water == ('Regular' || 'Moderate')
+          elsif weather['current']['precip_mm'] > 30 && Condition.find_by(plant_id: plant.id).water == 'Regular'
             new_task = Task.new(name: plant.name,
                                 description: "Precipation amount: #{weather['current']['precip_mm']} mm. " \
                                              "No need to water your plant.",

@@ -219,7 +219,7 @@ plant9.category = trees
 plant9_photo = URI.open('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8d701ac9-5f2f-46b0-bcd4-603768c2c88f/ddaexar-864a964e-c17e-4300-a6d6-77b68fcbe0db.png/v1/fill/w_800,h_579,strp/baobab_tree_png_4_by_gareng92_ddaexar-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc5IiwicGF0aCI6IlwvZlwvOGQ3MDFhYzktNWYyZi00NmIwLWJjZDQtNjAzNzY4YzJjODhmXC9kZGFleGFyLTg2NGE5NjRlLWMxN2UtNDMwMC1hNmQ2LTc3YjY4ZmNiZTBkYi5wbmciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kAw-3wG6uUgACfbHYWVbh4GUGNy6faEGkMOrSHhqJX4')
 plant9.photo.attach(io: plant9_photo, filename: "#{plant9.name}.png", content_type: "image/png")
 plant9.save
-cond9 = Condition.new(sun: '8-12hrs', water: 'Moderate', climate: '14-35˚C')
+cond9 = Condition.new(sun: '8-12hrs', water: 'Regular', climate: '14-35˚C')
 cond9.plant = plant9
 cond9.save
 puts "created Baobab"
@@ -254,7 +254,7 @@ plant11.category = trees
 plant11_photo = URI.open('https://www.featheredaddictions.com/assets/images/be716551-5e6e-4914-b2a6-8bfe2f5c029d_clipped_rev_1.png')
 plant11.photo.attach(io: plant11_photo, filename: "#{plant11.name}.png", content_type: "image/png")
 plant11.save
-cond11 = Condition.new(sun: '8-12hrs', water: 'Moderate', climate: '20-30˚C')
+cond11 = Condition.new(sun: '8-12hrs', water: 'Regular', climate: '20-30˚C')
 cond11.plant = plant11
 cond11.save
 puts "created Pod Mohagany"

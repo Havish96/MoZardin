@@ -5,7 +5,7 @@ export default class extends Controller {
   static values = {
     apiKey: String
   }
-  static targets = ["temperature", "address", "region", "condition"]
+  static targets = ["temperature", "address", "region"]
   connect() {
     console.log(this.apiKeyValue)
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=${this.apiKeyValue}&q=${this.addressTarget.textContent}-mauritius`, {
@@ -26,7 +26,7 @@ export default class extends Controller {
     console.log(data)
     this.temperatureTarget.innerText = `${Math.round(data.current.temp_c)}`
     this.regionTarget.innerText = data.location.region
-    this.conditionTarget.innerText = data.current.condition.text
+    // this.conditionTarget.innerText = data.current.condition.text
     // const today = new Date();
     // const localOffset = data.timezone + today.getTimezoneOffset() * 60
     // const localDate = new Date(today.setUTCSeconds(localOffset))
